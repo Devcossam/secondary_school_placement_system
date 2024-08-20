@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>
+            {% block title %} 
+            
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="/">HOME</a>  |
+            <a href="/school">SCHOOLS</a> |
+            <a href="/login">LOG IN</a> |
+            <a href="/signup">SIGN UP</a> |
+            <a href="/about">ABOUT</a>    
+        </div>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </body>
+</html>
