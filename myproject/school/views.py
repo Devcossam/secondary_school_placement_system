@@ -11,4 +11,16 @@ def school(request):
         'schools':schools,
     }
     return HttpResponse(template.render(context,request))
+
+def school_details(request, id):
+    school = School.objects.get(id=id)
+    template = loader.get_template('school/school_details.html')
+    context = {
+        'school': school,
+    }
+    return HttpResponse(template.render(context, request))
+
+def school_login(request):
+    template = loader.get_template('school/school_login.html')
+    return HttpResponse(template.render())
     

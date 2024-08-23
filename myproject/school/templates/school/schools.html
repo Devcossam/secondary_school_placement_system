@@ -9,8 +9,12 @@
         <h1>Available Schools</h1>
         <ul>
             {% for school in schools %}
-            <li><a class="dec" href="">{{ school.name }} </a></li>
+            <li><a href="school.school_details/school.id" class="dec">{{ school.name }}</a></li>
             {% endfor %}
         </ul>
     </div> 
+    <footer>
+        <p>Contact Us: <a href="mailto:cossamsoko7@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+        <p>copyright @2024</p>
+    </footer>
 {% endblock%}

@@ -10,6 +10,10 @@ def login(request):
     template = loader.get_template('login.html')
     return HttpResponse(template.render())
 
+def school_login(request):
+    template = loader.get_template('school_login.html')
+    return HttpResponse(template.render())
+
 def signup(request):
     template = loader.get_template('signup.html')
     return HttpResponse(template.render())
