@@ -1,9 +1,44 @@
-{% extends 'master.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            login
+        </title>
+        <link rel="stylesheet" href='{% static 'css/login.css' %}?{% now "U" %}'>
+    </head>
+    <body>
+        {% comment %} Navigation Bar  {% endcomment %}
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/school">Schools</a>
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a> 
+            <a href="/about">About</a>  
+        </div>
 
-{% block title %}
-    login
-{% endblock %}
+        {% comment %} Login Form  {% endcomment %}
+        <div class="login-container">
+            <h2>Login to Your Account</h2>
+            <form action="your_login_backend_script_here" method="POST">
+                <input type="text" name="username" placeholder="Username or Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+            <div class="forgot-password">
+                <a href="#">Forgot your password?</a>
+            </div>
+        </div>
 
-{% block content %}
-    <p>login</p>
-{% endblock %}
+        {% comment %} footer form  {% endcomment %}
+        <footer>
+            <p>Contact Us: <a href="mailto:cossamsoko7@gmail.com">schoolservices3@gmail.com</a></p>
+            <p>copyright @2024</p>
+        </footer>
+        
+    </body>
+</html>
+
+

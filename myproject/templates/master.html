@@ -2,20 +2,22 @@
 {% load static %}
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
             {% block title %} 
             
             {% endblock %}
         </title>
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href='{% static 'css/styles.css' %}?{% now "U" %}'>
     </head>
     <body>
-        <div class="topnav">
-            <a href="/">HOME</a>  |
-            <a href="/school">SCHOOLS</a> |
-            <a href="/login">LOG IN</a> |
-            <a href="/signup">SIGN UP</a> |
-            <a href="/about">ABOUT</a>    
+        <div class="navbar">
+            <a href="/">Home</a>  
+            <a href="/school">Schools</a> 
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a> 
+            <a href="/about">About</a>    
         </div>
 
         {% block content %}
