@@ -5,30 +5,20 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            login
+            Home page
         </title>
-        <link rel="stylesheet" href='{% static 'css/login.css' %}?{% now "U" %}'>
+        <link rel="stylesheet" href='{% static 'css/landingpage.css' %}?{% now "U" %}'>
     </head>
     <body>
         {% comment %} Navigation Bar  {% endcomment %}
         <div class="navbar">
             <a href="/">Home</a>
             <a href="/school">Schools</a>
-            <a href="/signup">Signup</a> 
             <a href="/about">About</a>  
         </div>
 
-        {% comment %} Login Form  {% endcomment %}
-        <div class="login-container">
-            <h2>student login</h2>
-            <form action="your_login_backend_script_here" method="POST">
-                <input type="text" name="username" placeholder="Username or Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="submit" value="Login">
-            </form>
-            <div class="forgot-password">
-                <a href="#">Forgot your password?</a>
-            </div>
+        <div class="div2">
+            <p>Welcome Cossam Soko. [ <a class="dec" href="/">logout</a> ]</p>
         </div>
 
         {% comment %} footer form  {% endcomment %}
@@ -39,5 +29,3 @@
         
     </body>
 </html>
-
-

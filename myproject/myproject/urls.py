@@ -26,4 +26,5 @@ urlpatterns = [
     path('signup/',views.signup, name='signup'),
     path('about/',views.about, name='about'),
     path('school/',include('school.urls'), name='schools'),
+    path('pupil/',include('pupil.urls'),name='pupil_landing_page'),
 ]
