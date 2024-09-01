@@ -1,20 +1,42 @@
-{% extends "master.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Available schools
+        </title>
+        <link rel="stylesheet" href='{% static 'css/schools.css' %}?{% now "U" %}'>
+    </head>
+    <body>
+        {% comment %} Navigation Bar  {% endcomment %}
+        <div class="navbar">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/school">Schools</a>
+            <a href="/about">About</a>  
+            <a href="/profile">Profile</a>  
+            <form action="/school/search/" method="GET" class="search-form">
+                <input type="text" name="query" placeholder="Search Schools..." class="search-input">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
 
-{% block title %}
-    schools
-{% endblock %}
+        {% comment %} <div class='mycard'>  {% endcomment %}
+            <h1>Available Schools</h1>
+            <ul>
+                {% for school in schools %}
+                <li><a href="" class='dec'>{{ school.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% comment %} </div> {% endcomment %}
+        
+        {% comment %} footer form  {% endcomment %}
+        <footer>
+            <p>Contact Us: <a href="mailto:cossamsoko7@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+            <p>copyright @2024</p>
+        </footer>
+        
+    </body>
+</html>
 
-{% block content %}
-    <div class='mycard'> 
-        <h1>Available Schools</h1>
-        <ul>
-            {% for school in schools %}
-            <li>{{ school.name }}</li>
-            {% endfor %}
-        </ul>
-    </div> 
-    <footer>
-        <p>Contact Us: <a href="mailto:cossamsoko7@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
-        <p>copyright @2024</p>
-    </footer>
-{% endblock%}
