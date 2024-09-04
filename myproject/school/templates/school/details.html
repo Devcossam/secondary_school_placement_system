@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        details for {{ school.name }}
+    </title>
+    <link rel="stylesheet" href='{% static 'css/schooldetails.css' %}?{% now "U" %}'>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/school">Schools</a>
+        <a href="/about">About</a>  
+        <a href="/profile">Profile</a>  
+    </div>
+
+    <div class="welcome-message">
+            <p>details for {{ school.name }}</p>
+    </div>
+
+    <div class="main-content">
+        <!-- School Placement Information -->
+        <div class="school-placement">
+            <p><strong>Name:</strong> {{ school.name }}</p>
+            <p><strong>Email:</strong> <a href="mailto:{{ school.email }}">{{ school.email }}</a></p>
+            <p><strong>Phone:</strong> {{ school.contact_number }}</p>
+            <p><strong>Location:</strong> {{ school.location }}</p>
+            <p><strong>Province:</strong> {{ school.location }}</p>
+            <p><strong>Student Capacity:</strong> {{ school.student_capacity }}</p>
+            <p><strong>Type:</strong> {{ school.location }}</p>
+            <a href="/school" class="cta-button1">back</a> <a href="/application_form" class="cta-button2">apply</a>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>

@@ -26,7 +26,7 @@
             <h1>Available Schools</h1>
             <ul>
                 {% for school in schools %}
-                <li><a href="" class='dec'>{{ school.name }}</a></li>
+                    <li><a class="dec" href="{% url 'school_details' id=school.id %}">{{ school.name }}</a></li>
                 {% endfor %}
             </ul>
         {% comment %} </div> {% endcomment %}

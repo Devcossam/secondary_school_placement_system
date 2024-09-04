@@ -17,14 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from pupil import views as pupil_views
+from school import views as school_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home_page, name='home'),
     path('login/',views.login, name='login'),
     path('school_login',views.school_login, name='school_login'),
-    path('signup/',views.signup, name='signup'),
     path('about/',views.about, name='about'),
-    path('school/',include('school.urls'), name='schools'),
-    path('dashboard/',include('pupil.urls'),name='dashboard'),
+    path('school/',school_views.school, name='schools'),
+    path('school/school_details/<int:id>',school_views.school_details,name="school_details"),
+    path('signup/',pupil_views.signup, name='signup'),
+    path('dashboard/',pupil_views.dashboard,name='dashboard'),
+    path('application_form/',pupil_views.application_form,name="applicationform"),
 ]

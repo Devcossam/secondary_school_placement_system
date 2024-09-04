@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}?{% now 'U' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+        <a href="/about">About</a>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="login-container">
+        <h2>Student Signup</h2>
+        <form action="/login" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Renders all form fields as <p> elements -->
+            <input type="submit" value="Signup">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>
