@@ -19,7 +19,7 @@
     <!-- Signup Form -->
     <div class="login-container">
         <h2>Student Signup</h2>
-        <form action="/login" method="POST">
+        <form action="/signup" method="POST">
             {% csrf_token %}
             {{ form.as_p }}  <!-- Renders all form fields as <p> elements -->
             <input type="submit" value="Signup">
