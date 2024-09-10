@@ -25,5 +25,3 @@ def dashboard(request):
 def application_form(request):
     template = loader.get_template('pupil/application_form.html')
     return HttpResponse(template.render())
-
-

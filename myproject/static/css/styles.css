@@ -107,6 +107,16 @@ a.dec:hover {
 .staff-info {
   background-color: #f8f9fa;
 }
+.logo a {
+  font-style: italic;
+  color:white;
+  float: right;
+  font-size: medium;
+  background-color: #3ece45;
+}
+.logo a:hover {
+  background-color: #3ece45;
+}
 
 .info div {
   width: 45%;

@@ -21,6 +21,16 @@ body {
 .navbar a:hover {
     background-color: #45a049;
 }
+.logo a {
+    font-style: italic;
+    color:white;
+    float: right;
+    font-size: medium;
+    background-color: #3ece45;
+  }
+  .logo a:hover {
+    background-color: #3ece45;
+  }
 .login-container {
     background-color: #ffffff;
     padding: 20px;

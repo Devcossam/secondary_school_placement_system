@@ -22,13 +22,17 @@
             </form>
         </div>
 
-        {% comment %} <div class='mycard'>  {% endcomment %}
+       
+        <div class="content">
+
             <h1>Available Schools</h1>
             <ul>
                 {% for school in schools %}
                     <li><a class="dec" href="{% url 'school_details' id=school.id %}">{{ school.name }}</a></li>
                 {% endfor %}
             </ul>
+
+        </div>
         {% comment %} </div> {% endcomment %}
         
         {% comment %} footer form  {% endcomment %}

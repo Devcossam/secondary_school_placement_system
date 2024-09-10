@@ -103,6 +103,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# AUTH_USER_MODEL = 'pupil.Pupil'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/

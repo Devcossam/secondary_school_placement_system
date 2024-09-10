@@ -20,8 +20,3 @@ def school_details(request, id):
         'school': school,
     }
     return HttpResponse(template.render(context, request))
-
-
-
-
-    

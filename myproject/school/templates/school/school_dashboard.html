@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>school Dashboard</title>
+    <link rel="stylesheet" href='{% static 'css/landingpage.css' %}?{% now "U" %}'>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="/school_dashboard">Dashboard</a>
+    </div>
+
+    <!-- Welcome Message -->
+    <div class="welcome-message">
+            <p>Welcome to parklands secondary school dashboard. [ <a class="dec" href="/">logout</a> ]</p>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <div class="dashboard">
+        <div class="sidebar">
+            <!-- Profile Overview -->
+            <div class="profile-overview">
+                <h3>Profile Overview</h3>
+                <p><strong>Name:</strong> Cossam Soko</p>
+                <p><strong>Date of Birth:</strong> 15th Jan 2008</p>
+                <p><strong>Email:</strong> cossamsoko7@gmail.com</p>
+                <p><strong>Current Grade:</strong> Grade 8</p>
+                <p><a href="#">View Full Profile</a></p>
+            </div>
+
+            <!-- Application Management -->
+            <div class="application-management">
+                <h3>Application Management</h3>
+                <p><a href="/application_form">New Application</a></p>
+                <p><a href="#">Edit/Update Application</a></p>
+                <p><a href="#">Upload Documents</a></p>
+                <p><a href="#">View Application History</a></p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- School Placement Information -->
+            <div class="school-placement">
+                <h3>School Placement Information</h3>
+                <p><a href="/school">Available Schools</a></p>
+                <p><a href="#">Recommended Schools</a></p>
+                <p><a href="#">View Application Status</a></p>
+            </div>
+
+            <!-- Resources and Guidance -->
+            <div class="resources">
+                <h3>Resources and Guidance</h3>
+                <p><a href="#">View School Profiles</a></p>
+                <p><a href="#">Placement Tips</a></p>
+                <p><a href="#">Frequently Asked Questions</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+        <p>© 2024 School Placement System</p>
+    </footer>
+</body>
+</html>
+

@@ -6,7 +6,7 @@ class Pupil(models.Model):
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     contact_number = models.CharField(max_length=15)
-    date_of_birth = models.DateField()
+    date_of_birth = models.DateField(null=True)
     address = models.TextField()
     password = models.CharField(max_length=10)
 
