@@ -1,41 +1,107 @@
-{% extends "master.html" %}
-
-
-{% block title %}
-    secondary school placement system
-{% endblock %}
-
-{% block content %}
-
-<main>
-    <div class="main">
-
-        <section class="hero">
-            <h1>Welcome to Our Secondary School Placement System</h1>
-            <p>Apply for admission, track your application status, and more.</p>
-        </section>
-
-        <section class="info">
-            <div class="applicant-info">
-                <h2>For Applicants</h2>
-                <p>
-                    This system is for pupils (applicants) transitioning either from 
-                    primary schools to secondary schools or secondary schools to secondary 
-                    schools.
-                </p>
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            home page
+        </title>
+        <link rel="stylesheet" href='{% static 'css/homepage.css' %}?{% now "U" %}'>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo"><a>secondary school placement system</a></div>    
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a> 
+        </div>
+        <main>
+            <div class="main">
+        
+                <section class="hero">
+                    <h1>Welcome to Our Secondary School Placement System</h1>
+                    <p>Apply for admission, track your application status, and more.</p>
+                </section>
+        
+                <section class="info">
+                    <div class="applicant-info">
+                        <h2>For Applicants</h2>
+                        <p>
+                            This system is for pupils (applicants) transitioning either from 
+                            primary schools to secondary schools or secondary schools to secondary 
+                            schools.
+                        </p>
+                    </div>
+                    <div class="staff-info">
+                        <h2>For Schools</h2>
+                        <a href="/school_login" class="cta-button">school login</a>
+                        <p>Note: Restricted to only Goverement schools.</p>
+                    </div>
+                </section>
             </div>
-            <div class="staff-info">
-                <h2>For Schools</h2>
-                <a href="/school_login" class="cta-button">school login</a>
-                <p>Note: Restricted to only Goverement schools.</p>
+        </main>
+        <footer>
+            <p>Contact Us: <a class="dec" href="mailto:cossamsoko7@gmail.com">schoolservices3@gmail.com</a></p>
+            <p>copyright @2024</p>
+        </footer>
+    </body>
+</html>
+{% comment %} <!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            home page
+        </title>
+        <link rel="stylesheet" href='{% static 'css/styles.css' %}?{% now "U" %}'>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo"><a>secondary school placement system</a></div>
+            <a href="/">Home</a>  
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a> 
+            <a href="/about">About</a>   
+        </div>
+        <main>
+            <div class="navbar">
+                <div class="logo"><a>secondary school placement system</a></div>    
+                <a href="/">Home</a>
+                <a href="/login">Login</a>
+                <a href="/signup">Signup</a> 
+                <a href="/about">About</a> 
             </div>
-        </section>
-    </div>
-</main>
-
-<footer>
-    <p>Contact Us: <a class="dec" href="mailto:cossamsoko7@gmail.com">schoolservices3@gmail.com</a></p>
-    <p>copyright @2024</p>
-</footer>
-
-{% endblock %}
+            <div class="main">
+        
+                <section class="hero">
+                    <h1>Welcome to Our Secondary School Placement System</h1>
+                    <p>Apply for admission, track your application status, and more.</p>
+                </section>
+        
+                <section class="info">
+                    <div class="applicant-info">
+                        <h2>For Applicants</h2>
+                        <p>
+                            This system is for pupils (applicants) transitioning either from 
+                            primary schools to secondary schools or secondary schools to secondary 
+                            schools.
+                        </p>
+                    </div>
+                    <div class="staff-info">
+                        <h2>For Schools</h2>
+                        <a href="/school_login" class="cta-button">school login</a>
+                        <p>Note: Restricted to only Goverement schools.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Contact Us: <a class="dec" href="mailto:cossamsoko7@gmail.com">schoolservices3@gmail.com</a></p>
+            <p>copyright @2024</p>
+        </footer>
+    </body>
+</html> {% endcomment %}

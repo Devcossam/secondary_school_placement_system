@@ -10,10 +10,10 @@
 <body>
     <!-- Navigation Bar -->
     <div class="navbar">
+        <div class="logo"><a>secondary school placement system</a></div>
         <a href="/">Home</a>
         <a href="/login">Login</a>
         <a href="/signup">Signup</a>
-        <a href="/about">About</a>
     </div>
 
     <!-- Signup Form -->
@@ -21,7 +21,14 @@
         <h2>Student Signup</h2>
         <form action="/signup" method="POST">
             {% csrf_token %}
-            {{ form.as_p }}  <!-- Renders all form fields as <p> elements -->
+            {% comment %}{{ form.as_p }}  {% endcomment%} <!-- Renders all form fields as <p> elements -->
+                <input type="text" name="firstname" placeholder="firstname" required>
+                <input type="text" name="lastname" placeholder="lastname" required>
+                <input type="text" name="email" placeholder="email" required>
+                <input type="text" name="contact" placeholder="contact" required>
+                <input type="date" name="date-of-birth" placeholder="date-of-birth" required>
+                <input type="text" name="address" placeholder="address" required>
+                <input type="password" name="password" placeholder="Password" required>
             <input type="submit" value="Signup">
         </form>
     </div>

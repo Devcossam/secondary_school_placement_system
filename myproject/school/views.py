@@ -20,3 +20,7 @@ def school_details(request, id):
         'school': school,
     }
     return HttpResponse(template.render(context, request))
+
+def school_dashboard(request):
+    template = loader.get_template('school/school_dashboard.html')
+    return HttpResponse(template.render())

@@ -30,5 +30,6 @@ urlpatterns = [
     path('school/school_details/<int:id>',school_views.school_details,name="school_details"),
     path('signup/',pupil_views.signup, name='signup'),
     path('dashboard/',pupil_views.dashboard,name='dashboard'),
+    path('school_dashboard/',school_views.school_dashboard,name="school_dashboard"),
     path('application_form/',pupil_views.application_form,name="applicationform"),
 ]
