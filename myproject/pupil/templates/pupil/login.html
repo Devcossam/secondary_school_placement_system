@@ -5,25 +5,26 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            school-login
+            login
         </title>
         <link rel="stylesheet" href='{% static 'css/login.css' %}?{% now "U" %}'>
     </head>
     <body>
         {% comment %} Navigation Bar  {% endcomment %}
         <div class="navbar">
+            <div class="logo"><a>secondary school placement system</a></div>    
             <a href="/">Home</a>
-            <a href="/school">Schools</a>
-            <a href="/login">Login</a>
-            <a href="/signup">Signup</a> 
-            <a href="/about">About</a>  
+            <a href="/pupil_login">Login</a>
+            <a href="/signup">Signup</a>  
         </div>
 
         {% comment %} Login Form  {% endcomment %}
         <div class="login-container">
-            <h2>school login</h2>
-            <form action="/school_login" method="POST">
-                <input type="text" name="username" placeholder="school name or Email" required>
+            <h2>student login</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {% comment %} {{ form.as_p }} {% endcomment %}
+                <input type="text" name="username" placeholder="Username or Email" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="submit" value="Login">
             </form>

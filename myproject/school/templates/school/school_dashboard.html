@@ -1,71 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load static %}
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>school Dashboard</title>
-    <link rel="stylesheet" href='{% static 'css/landingpage.css' %}?{% now "U" %}'>
+    <title>School Dashboard</title>
+    <link rel="stylesheet" href='{% static 'css/schooldashboard.css' %}?{% now "U" %}'>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <div class="navbar">
+        <div class="logo"><a>secondary school placement system</a></div>
         <a href="/school_dashboard">Dashboard</a>
+        <a href="#">Profile</a>  
+        <a href="#">About</a>
+        <div class="logout"><a href="/">logout</a></div>  
     </div>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            {% comment %} <h2>School Dashboard</h2> {% endcomment %}
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#applications">Student Applications</a></li>
+                <li><a href="#seats">Manage Seats</a></li>
+                <li><a href="#reports">Generate Reports</a></li>
+                <li><a href="#profile">School Profile</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
 
-    <!-- Welcome Message -->
-    <div class="welcome-message">
-            <p>Welcome to parklands secondary school dashboard. [ <a class="dec" href="/">logout</a> ]</p>
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-content">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section">
+                <h1>Dashboard Overview</h1>
+                <div class="stats">
+                    <div class="stat-box">
+                        <h3>Total Applications</h3>
+                        <p>150</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Available Seats</h3>
+                        <p>50</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Accepted Students</h3>
+                        <p>45</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Pending Applications</h3>
+                        <p>10</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Student Applications Section -->
+            <section id="applications" class="dashboard-section">
+                <h2>Student Applications</h2>
+                <table class="applications-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Grade</th>
+                            <th>Application Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>8th Grade</td>
+                            <td>September 1, 2024</td>
+                            <td>Pending</td>
+                            <td><button class="accept-btn">Accept</button> <button class="reject-btn">Reject</button></td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>9th Grade</td>
+                            <td>September 2, 2024</td>
+                            <td>Accepted</td>
+                            <td><button class="view-btn">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Manage Seats Section -->
+            <section id="seats" class="dashboard-section">
+                <h2>Manage Available Seats</h2>
+                <form id="seatsForm">
+                    <label for="totalSeats">Total Seats Available:</label>
+                    <input type="number" id="totalSeats" name="totalSeats" value="50">
+
+                    <input type="submit" value="Update Seats">
+                </form>
+            </section>
+
+            <!-- Generate Reports Section -->
+            <section id="reports" class="dashboard-section">
+                <h2>Generate Reports</h2>
+                <button class="generate-btn">Download Student Data</button>
+            </section>
+        </main>
     </div>
-
-    <!-- Main Dashboard Content -->
-    <div class="dashboard">
-        <div class="sidebar">
-            <!-- Profile Overview -->
-            <div class="profile-overview">
-                <h3>Profile Overview</h3>
-                <p><strong>Name:</strong> Cossam Soko</p>
-                <p><strong>Date of Birth:</strong> 15th Jan 2008</p>
-                <p><strong>Email:</strong> cossamsoko7@gmail.com</p>
-                <p><strong>Current Grade:</strong> Grade 8</p>
-                <p><a href="#">View Full Profile</a></p>
-            </div>
-
-            <!-- Application Management -->
-            <div class="application-management">
-                <h3>Application Management</h3>
-                <p><a href="/application_form">New Application</a></p>
-                <p><a href="#">Edit/Update Application</a></p>
-                <p><a href="#">Upload Documents</a></p>
-                <p><a href="#">View Application History</a></p>
-            </div>
-        </div>
-
-        <div class="main-content">
-            <!-- School Placement Information -->
-            <div class="school-placement">
-                <h3>School Placement Information</h3>
-                <p><a href="/school">Available Schools</a></p>
-                <p><a href="#">Recommended Schools</a></p>
-                <p><a href="#">View Application Status</a></p>
-            </div>
-
-            <!-- Resources and Guidance -->
-            <div class="resources">
-                <h3>Resources and Guidance</h3>
-                <p><a href="#">View School Profiles</a></p>
-                <p><a href="#">Placement Tips</a></p>
-                <p><a href="#">Frequently Asked Questions</a></p>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
-        <p>© 2024 School Placement System</p>
-    </footer>
 </body>
 </html>
-

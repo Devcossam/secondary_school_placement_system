@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
+    background-image: url("../pictures/img2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
     margin: 0;
     padding: 0;
 }
@@ -24,7 +29,7 @@ body {
 .logo a {
     font-style: italic;
     color:white;
-    float: right;
+    float: left;
     font-size: medium;
     background-color: #3ece45;
   }

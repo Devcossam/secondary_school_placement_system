@@ -25,12 +25,27 @@
        
         <div class="content">
 
-            <h1>Available Schools</h1>
+            {% comment %} <h1>Available Schools</h1>
             <ul>
                 {% for school in schools %}
                     <li><a class="dec" href="{% url 'school_details' id=school.id %}">{{ school.name }}</a></li>
                 {% endfor %}
-            </ul>
+            </ul> {% endcomment %}
+            <table class="school-table">
+                <h1>Available schools</h1>
+                <th>school name</th>
+                <th>school province</th>
+                <th>Actions</th>
+
+                {% for school in schools %}
+                    <tr>
+                        <td>{{ school.name }}</td>
+                        <td>{{ school.province }}</td>
+                        <td><a href="{% url 'school_details' id=school.id %}" class="cta-button1">view</a></td>
+                    </tr>
+                {% endfor %}
+
+            </table>
 
         </div>
         {% comment %} </div> {% endcomment %}
