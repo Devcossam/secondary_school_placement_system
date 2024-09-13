@@ -24,23 +24,9 @@ body {
   background-color: #45a049;
 }
 
-.logo a {
-  font-style: italic;
-  color:white;
-  float: left;
-  font-size: medium;
-  background-color: #3ece45;
-}
-
-.logo a:hover {
-  background-color: #3ece45;
-}
-
-
 .main, .main h1 {
   text-align:center;
 }
-
 
 main {
   padding: 20px;
@@ -53,30 +39,12 @@ main {
   color: #555;
 }
 
-.first-section {
-  background-color: #f8f9fa;
-  padding: 35px 20px;
-  text-align: center;
-  color: #555;
-  text-align: left;
-}
-
 .hero h1 {
   font-size: 2.0em;
   margin-bottom: 7px;
 }
 
-.first-section h1 {
-  font-size: 2.0em;
-  margin-bottom: 7px;
-}
-
 .hero p {
-  font-size: 1.2em;
-  margin-bottom: 15px;
-}
-
-.first-section p {
   font-size: 1.2em;
   margin-bottom: 15px;
 }
@@ -90,11 +58,14 @@ a.dec:hover {
   text-decoration: underline;
 }
 
+/* a:hover {
+  text-decoration: underline;
+} */
 
 .cta-button {
   background-color: #4CAF50;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 30px;
   border-radius: 5px;
   text-transform: uppercase;
   font-weight: bold;
@@ -118,16 +89,6 @@ a.dec:hover {
 
 .staff-info {
   background-color: #f8f9fa;
-}
-.logo a {
-  font-style: italic;
-  color:white;
-  float: right;
-  font-size: medium;
-  background-color: #3ece45;
-}
-.logo a:hover {
-  background-color: #3ece45;
 }
 
 .info div {
@@ -187,6 +148,10 @@ li {
   padding-left: 70px;
   margin-top: 5px;
 }
+
+/* li:hover {
+  transform: scale(1.1);
+} */
 
 footer {
   background-color: #f1f1f1;

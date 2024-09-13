@@ -24,13 +24,13 @@
     <div class="main-content">
         <!-- School Placement Information -->
         <div class="school-placement">
-            <p><strong>Name:</strong> {{ school.name }}</p>
-            <p><strong>Email:</strong> <a href="mailto:{{ school.email }}">{{ school.email }}</a></p>
-            <p><strong>Phone:</strong> {{ school.contact_number }}</p>
-            <p><strong>Location:</strong> {{ school.location }}</p>
-            <p><strong>Province:</strong> {{ school.location }}</p>
-            <p><strong>Student Capacity:</strong> {{ school.student_capacity }}</p>
-            <p><strong>Type:</strong> {{ school.location }}</p>
+            <p><strong>Name    :</strong> <span>{{ school.name }}</span></p>
+            <p><strong>Email   :</strong> <span><a href="mailto:{{ school.email }}">{{ school.email }}</a></span></p>
+            <p><strong>Phone   :</strong> <span>{{ school.contact_number }}</span></p>
+            <p><strong>Location:</strong> <span>{{ school.location }}</span></p>
+            <p><strong>Province:</strong> <span>{{ school.province }}</span></p>
+            <p><strong>Capacity:</strong> <span>{{ school.student_capacity }}</span></p>
+            <p><strong>Type    :</strong> <span>{{ school.type }}</span></p>
             <a href="/school" class="cta-button1">back</a> <a href="/application_form" class="cta-button2">apply</a>
         </div>
 

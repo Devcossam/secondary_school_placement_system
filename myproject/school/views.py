@@ -13,6 +13,10 @@ def school(request):
     }
     return HttpResponse(template.render(context,request))
 
+def school_login(request):
+    template = loader.get_template('school/school_login.html')
+    return HttpResponse(template.render())
+
 def school_details(request, id):
     school = School.objects.get(id=id)
     template = loader.get_template('school/details.html')
