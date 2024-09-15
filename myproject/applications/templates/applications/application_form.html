@@ -10,6 +10,7 @@
 <body>
     <!-- Navigation Bar -->
     <div class="navbar">
+        <div class="logo"><a>secondary school placement system</a></div> 
         <a href="/dashboard">Dashboard</a>
         <a href="/school">Schools</a>
         <a href="#">Change Information</a> 
@@ -17,7 +18,7 @@
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Submit</button>
+            <button type="submit" class="cta-button1">Submit</button>
         </form>
     
 

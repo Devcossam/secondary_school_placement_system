@@ -33,6 +33,18 @@ body, html {
     background-color: #45a049;
 }
 
+.logo a{
+    font-style: italic;
+    color:white;
+    float: left;
+    font-size: medium;
+    background-color: #3ece45;
+}
+
+.logo a:hover {
+    background-color: #3ece45;
+}
+
 h1 {
     text-align: center;
     color: #555;

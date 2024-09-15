@@ -16,15 +16,3 @@ def application_form(request):
     
     return render(request, 'applications/application_form.html', {'form': form})
 
-
-# def application_form(request):
-#     if request.method == "POST":
-#         form = ApplicationForm(request.POST) 
-#         if form.is_valid():
-#             form.save()
-#             return HttpResponse("Thank you for your application!")
-#     else:
-#         form = ApplicationForm() 
-    
-#     template = loader.get_template('applications/application_form.html')
-#     return HttpResponse(template.render({'form': form}, request))

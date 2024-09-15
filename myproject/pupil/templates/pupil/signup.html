@@ -18,18 +18,20 @@
 
     <!-- Signup Form -->
     <div class="login-container">
-        <h2>Student Signup</h2>
-        <form action="/signup" method="POST">
-            {% csrf_token %}
-            {% comment %}{{ form.as_p }}  {% endcomment%} <!-- Renders all form fields as <p> elements -->
-                <input type="text" name="firstname" placeholder="firstname" required>
+        <form method="POST" enctype="multipart/form-data">
+            <h2>Student Signup</h2>
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                {% comment %} <input type="text" name="firstname" placeholder="firstname" required>
                 <input type="text" name="lastname" placeholder="lastname" required>
                 <input type="text" name="email" placeholder="email" required>
                 <input type="text" name="contact" placeholder="contact" required>
                 <input type="date" name="date-of-birth" placeholder="date-of-birth" required>
                 <input type="text" name="address" placeholder="address" required>
-                <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" value="Signup">
+                <input type="password" name="password" placeholder="Password" required> 
+                <input type="submit" value="Signup"> {% endcomment %}
+            <button type="submit" class="cta-button1">Submit</button>
         </form>
     </div>
 
