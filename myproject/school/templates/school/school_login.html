@@ -14,21 +14,23 @@
         <div class="navbar">
             <div class="logo"><a>secondary school placement system</a></div>  
             <a href="/">Home</a>
-            <a href="/login">Login</a>
-            <a href="/signup">Signup</a>   
+            <a href="/pupil_login">Login</a>
+            <a href="/signup">Signup</a> 
+            <a href="/school_signup">school signup</a>  
         </div>
 
         {% comment %} Login Form  {% endcomment %}
         <div class="login-container">
             <h2>school login</h2>
-            <form action="/school_login" method="POST">
-                <input type="text" name="username" placeholder="school name or Email" required>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="school name " required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="submit" value="Login">
+                {% if error %}
+                    <p style="color: red;text-align:center;">{{ error }}</p>
+                {% endif %}
             </form>
-            <div class="forgot-password">
-                <a href="#">Forgot your password?</a>
-            </div>
         </div>
 
         {% comment %} footer form  {% endcomment %}

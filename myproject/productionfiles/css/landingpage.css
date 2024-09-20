@@ -144,6 +144,15 @@ h2{
     border-radius: 10px;
 }
 
+span {
+    padding-left: 300px;
+}
+
+p {
+    color: #555;
+}
+  
+
 .stat-box h3 {
     margin-bottom: 10px;
     font-size: 1.2rem;
@@ -232,8 +241,8 @@ footer {
     color: #555;
     padding: 20px;
     text-align: center;
-  }
+}
   
-  footer p {
+footer p {
     margin: 3px 0;
-  }
+}
