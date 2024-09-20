@@ -13,7 +13,8 @@
         <div class="logo"><a>secondary school placement system</a></div>
         <a href="/dashboard">Dashboard</a>
         <a href="/school">Schools</a>
-        <a href="">change information</a>  
+        <a href="">change information</a> 
+        <a href="/school_search">search school</a>  
         <div class="logout"><a href="/pupil_login">logout</a></div>
     </div>
     <div class="container">
@@ -37,12 +38,11 @@
                 <div class="main-content">
                     <div class="school-placement">      
                         <p><strong>Full Names: </strong> {{ pupil.name }}</p>
-                        <p><strong>Email:</strong> <a href="mailto:{{ pupil.email }}">{{ pupil.name}}</a></p>
-                        <p><strong>Phone:</strong> {{ pupil.contact_number }}</p>
-                        <p><strong>Province:</strong> {{ pupil.location }}</p>
-                        <p><strong>Home Address:</strong> {{ pupil.location }}</p> 
+                        <p><strong>Email:</strong> <a href="mailto:{{ pupil.email }}">{{ pupil.email }}</a></p>
+                        <p><strong>Phone:</strong> {{ pupil.contact }}</p>
+                        <p><strong>Home Address:</strong> {{ pupil.home_address }}</p> 
                         <p><strong>Current Grade:</strong> {{ pupil.grade }}</p>
-                        <p><strong>Age :</strong> {{ pupil.age }}</p>
+                        <p><strong>date joined: </strong> {{ pupil.date_joined }}</p>
                     </div>
                 </div>
                 <div class="stats">

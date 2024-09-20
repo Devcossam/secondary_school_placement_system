@@ -34,6 +34,7 @@ urlpatterns = [
     path('signup/',pupil_views.signup, name='signup'),
     path('dashboard/',pupil_views.dashboard,name='dashboard'),
     path('school_dashboard/',school_views.school_dashboard,name="school_dashboard"),
+    path('school_search/',school_views.school_search,name="school_search"),
     path('application_form/',application_views.application_form,name="applicationform"),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

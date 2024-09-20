@@ -1,0 +1,28 @@
+<!-- school_search.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Search</title>
+</head>
+<body>
+
+<h1>Available Schools</h1>
+
+<form method="get" action="{% url 'school_search' %}">
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+</form>
+
+<h2>Results:</h2>
+<ul>
+    {% for school in results %}
+        <li>{{ school.name }}</li>
+    {% empty %}
+        <li>No schools found.</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
