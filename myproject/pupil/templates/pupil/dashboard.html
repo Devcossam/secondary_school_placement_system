@@ -8,7 +8,7 @@
     <link rel="stylesheet" href='{% static 'css/landingpage.css' %}?{% now "U" %}'>
 </head>
 <body>
-    <!-- Navigation Bar -->
+
     <div class="navbar">
         <div class="logo"><a>secondary school placement system</a></div>
         <a href="/dashboard">Dashboard</a>
@@ -18,9 +18,8 @@
         <div class="logout"><a href="/pupil_login">logout</a></div>
     </div>
     <div class="container">
-        <!-- Sidebar Navigation -->
+        
         <nav class="sidebar">
-            {% comment %} <h2>School Dashboard</h2> {% endcomment %}
             <ul>
                 <li><a href="/application_form">New Application</a></li>
                 <li><a href="#">Edit/Update Application</a></li>
@@ -28,9 +27,8 @@
             </ul>
         </nav>
 
-        <!-- Main Dashboard Content -->
         <main class="dashboard-content">
-            <!-- Overview Section -->
+            
             <section id="overview" class="dashboard-section">
                 <div class="welcome-message">
                     <p>Welcome {{ pupil.name}}</p>

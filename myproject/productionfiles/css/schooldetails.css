@@ -86,22 +86,11 @@ a.dec:hover {
     display: inline-block;
   }
   
-  .cta-button1:hover {
+.cta-button1:hover {
     background-color: #45a049;
-  }
+}
 
-  .cta-button2 {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    display: inline-block;
-    float: right;
-  }
-  
-  .cta-button2:hover {
+.cta-button2:hover {
     background-color: #45a049;
   }
 

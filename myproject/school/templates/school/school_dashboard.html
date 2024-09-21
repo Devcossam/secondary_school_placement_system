@@ -16,9 +16,9 @@
         <div class="logout"><a href="/school_login">logout</a></div>  
     </div>
     <div class="container">
-        <!-- Sidebar Navigation -->
+        
         <nav class="sidebar">
-            {% comment %} <h2>School Dashboard</h2> {% endcomment %}
+            <h2>{{ school.name }}</h2>
             <ul>
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="#applications">Student Applications</a></li>
@@ -29,19 +29,19 @@
             </ul>
         </nav>
 
-        <!-- Main Dashboard Content -->
+    
         <main class="dashboard-content">
-            <!-- Overview Section -->
+
             <section id="overview" class="dashboard-section">
                 <h1>Dashboard Overview</h1>
                 <div class="stats">
                     <div class="stat-box">
-                        <h3>Total Applications</h3>
-                        <p>150</p>
+                        <h3>School Capacity</h3>
+                        <p>{{ school.student_capacity }}</p>
                     </div>
                     <div class="stat-box">
-                        <h3>Available Seats</h3>
-                        <p>50</p>
+                        <h3>Total Applications</h3>
+                        <p>150</p>
                     </div>
                     <div class="stat-box">
                         <h3>Accepted Students</h3>
@@ -54,7 +54,7 @@
                 </div>
             </section>
 
-            <!-- Student Applications Section -->
+            
             <section id="applications" class="dashboard-section">
                 <h2>Student Applications</h2>
                 <table class="applications-table">
@@ -86,7 +86,7 @@
                 </table>
             </section>
 
-            <!-- Manage Seats Section -->
+            {% comment %}
             <section id="seats" class="dashboard-section">
                 <h2>Manage Available Seats</h2>
                 <form id="seatsForm">
@@ -96,13 +96,19 @@
                     <input type="submit" value="Update Seats">
                 </form>
             </section>
+            {% endcomment %}
 
-            <!-- Generate Reports Section -->
+            {% comment %}
             <section id="reports" class="dashboard-section">
                 <h2>Generate Reports</h2>
                 <button class="generate-btn">Download Student Data</button>
             </section>
+            {% endcomment %}
         </main>
     </div>
+    <footer>
+        <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+        <p>&copy; 2024</p>
+    </footer>
 </body>
 </html>

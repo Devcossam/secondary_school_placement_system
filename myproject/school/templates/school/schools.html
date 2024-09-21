@@ -25,12 +25,7 @@
        
         <div class="content">
 
-            {% comment %} <h1>Available Schools</h1>
-            <ul>
-                {% for school in schools %}
-                    <li><a class="dec" href="{% url 'school_details' id=school.id %}">{{ school.name }}</a></li>
-                {% endfor %}
-            </ul> {% endcomment %}
+           
             <table class="school-table">
                 <h1>Available schools</h1>
                 <th>school name</th>
@@ -48,7 +43,6 @@
             </table>
 
         </div>
-        {% comment %} </div> {% endcomment %}
         
         {% comment %} footer form  {% endcomment %}
         <footer>

@@ -29,9 +29,6 @@ def school_signup(request):
     
     return render(request, 'school/school_signup.html', {'form': form})
 
-# def school_login(request):
-#     template = loader.get_template('school/school_login.html')
-#     return HttpResponse(template.render())
 
 def school_login(request):
     if request.method == 'POST':
@@ -57,9 +54,8 @@ def school_details(request, id):
 
 @login_required
 def school_dashboard(request):
-    template = loader.get_template('school/school_dashboard.html')
-    return HttpResponse(template.render())
-
+    school = request.user.school
+    return render(request,"school/school_dashboard.html",{'school':school})
 
 def school_search(request):
     form = SchoolSearchForm()
