@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Status</title>
+    <link rel="stylesheet" href='{% static 'css/applicationstatus.css' %}?{% now "U" %}'>
+
+<body>
+    <div class="status-container">
+        <div class="status-header">
+            <h1>Application Status</h1>
+            <button onclick="window.history.back();" class="close-button">✖</button>
+        </div>
+        <div class="status-content">
+            <p>Status: {{ application.status }}</p>
+            <p>Date Applied: {{ application.date_applied }}</p>
+        </div>
+    </div>
+</body>
+</html>

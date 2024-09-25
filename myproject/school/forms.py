@@ -26,3 +26,10 @@ class SchoolSignupForm(forms.ModelForm):
 
 class SchoolSearchForm(forms.Form):
     query = forms.CharField(label='Search for a school', max_length=100)
+
+
+# class SchoolSearchForm(forms.Form):
+#     query = forms.CharField(label='Search Schools', required=False, widget=forms.TextInput(attrs={
+#         'placeholder': 'Search by school name...',
+#         'class': 'search-input'
+#     }))

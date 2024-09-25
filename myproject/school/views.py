@@ -17,6 +17,23 @@ def school(request):
     }
     return HttpResponse(template.render(context,request))
 
+# def school(request):
+#     form = SchoolSearchForm(request.GET or None)  # Initialize the form with GET data
+#     schools = School.objects.all()  # Default to showing all schools
+#     results = schools  # This will be used to display either all or filtered results
+
+#     if form.is_valid():  # If form is valid (i.e., it has search input)
+#         query = form.cleaned_data.get('query')  # Get the search input from the form
+#         if query:  # If there is a search query, filter the schools
+#             results = schools.filter(name__icontains=query)
+
+#     context = {
+#         'form': form,        # Pass the search form to the template
+#         'schools': results,  # Either all schools or the filtered list (search results)
+#     }
+
+    # return render(request, 'school/schools.html', context)
+
 def school_signup(request):
     if request.method == "POST":
         form = SchoolSignupForm(request.POST)
