@@ -2,8 +2,6 @@
 body {
   font-family: Arial, sans-serif;
   margin:0;
-  /* letter-spacing: 0.64px; */
-  /* color: #585d74; */
   background-color: #f1f1f1;
 }
 
@@ -157,26 +155,18 @@ a.dec:hover {
   padding: 20px;
 }
 .mycard h1 {
-  /* text-align: center; */
   color:#ffffff;
   margin:20px 0 60px 0;
 }
-
-/* .mycard li {
-  display: flex;
-  justify-content:space-between;
-  align-items: center;
-  padding: 20px 0;
-} */
 
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
+
 li {
   background-color: #ffffff;
-  /* background-image: linear-gradient(to right, #4CAF50, #4CAF50);  */
   background-size: 50px 60px;
   background-repeat: no-repeat;
   cursor: pointer;

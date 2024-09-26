@@ -11,7 +11,7 @@ def signup(request):
     if request.method == 'POST':
         form = StudentSignUpForm(request.POST)
         if form.is_valid():
-            form.save()  # Save the new student to the database
+            form.save()  # Saving the new student to the database
             return redirect('/login')  # Redirect to a success page or another view
     else:
         form = StudentSignUpForm()

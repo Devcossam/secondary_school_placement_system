@@ -47,7 +47,6 @@ ul {
 
 li {
     background-color: #ffffff;
-    /* background-image: linear-gradient(to right, #4CAF50, #4CAF50);  */
     background-size: 50px 60px;
     background-repeat: no-repeat;
     cursor: pointer;

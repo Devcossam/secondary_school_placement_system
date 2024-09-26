@@ -2,8 +2,6 @@
 body {
   font-family: Arial, sans-serif;
   margin:0;
-  /* letter-spacing: 0.64px; */
-  /* color: #585d74; */
   background-color: #f1f1f1;
 }
 
@@ -38,7 +36,6 @@ body {
   .main, .main h1 {
     text-align:center;
   }
-  
   
   main {
     padding: 20px;
@@ -144,7 +141,6 @@ body {
     padding: 20px;
   }
   .mycard h1 {
-    /* text-align: center; */
     color:#ffffff;
     margin:20px 0 60px 0;
   }
@@ -156,7 +152,6 @@ body {
   }
   li {
     background-color: #ffffff;
-    /* background-image: linear-gradient(to right, #4CAF50, #4CAF50);  */
     background-size: 50px 60px;
     background-repeat: no-repeat;
     cursor: pointer;
