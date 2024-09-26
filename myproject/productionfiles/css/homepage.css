@@ -2,7 +2,18 @@
 body {
   font-family: Arial, sans-serif;
   margin:0;
+<<<<<<< HEAD
   background-color: #f1f1f1;
+=======
+  /* letter-spacing: 0.64px; */
+  /* color: #585d74; */
+  /* background-color: #f1f1f1; */
+  background-image: url("../pictures/img2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size:cover;
+>>>>>>> testing
 }
 
 .navbar {

@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Search</title>
+    <link rel="stylesheet" href="{% static 'css/schoolsearch.css' %}?{% now "U" %}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><a>Secondary School Placement System</a></div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/school">Schools</a>
+        <a href="">Change Information</a>   
+    </div>
+
+    <div class="content">
+
+
+        <h1 class="form-title">Search Schools</h1>
+    
+        <form method="get" action="{% url 'school_search' %}" class="search-form">
+        <div class="form-group">
+            <input type="text" name="query" class="form-control" placeholder="Enter school name or province">
+            <button type="submit" class="btn">Search</button>
+        </div>
+        </form>
+    
+        <h2>Results:</h2>
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>School Name</th>
+                    <th>Province</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for school in results %}
+                    <tr>
+                        <td>{{ school.name }}</td>
+                        <td>{{ school.province }}</td>
+                        <td>
+                            <a href="{% url 'school_details' id=school.id %}" class="cta-button1">View</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3">No schools found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <footer>
+        <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>
+
+{% comment %}{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Search</title>
+    <link rel="stylesheet" href="{% static 'css/schoolsearch.css' %}?{% now "U" %}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><a>secondary school placement system</a></div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/school">Schools</a>
+        <a href="">change information</a> 
+        <a href="/school_search">search school</a>  
+        <div class="logout"><a href="/pupil_login">logout</a></div>
+    </div>
+
+<h1>Available Schools</h1>
+
+<form method="get" action="{% url 'school_search' %}">
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+</form>
+
+<h2>Results:</h2>
+<ul>
+    {% for school in results %}
+        <li>{{ school.name }}</li>
+    {% empty %}
+        <li>No schools found.</li>
+    {% endfor %}
+</ul>
+<footer>
+    <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+    <p>&copy; 2024</p>
+</footer>
+
+</body>
+</html>
+{% endcomment %}

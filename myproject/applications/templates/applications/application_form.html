@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>application form</title>
+    <link rel="stylesheet" href='{% static 'css/applicationform.css' %}?{% now "U" %}'>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo"><a>secondary school placement system</a></div> 
+        <a href="/dashboard">Dashboard</a>
+        <a href="/school">Schools</a>
+        <a href="#">Change Information</a> 
+    </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="cta-button1">Submit</button>
+        </form>
+    
+    <footer>
+        <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+        <p>© 2024 School Placement System</p>
+    </footer>
+</body>
+</html>
+ 
+
+ 

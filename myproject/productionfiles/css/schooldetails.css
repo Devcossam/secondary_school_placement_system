@@ -21,6 +21,17 @@ body {
 .navbar a:hover {
     background-color: #45a049;
 }
+.logo a{
+    font-style: italic;
+    color:white;
+    float: left;
+    font-size: medium;
+    background-color: #3ece45;
+}
+
+.logo a:hover {
+    background-color: #3ece45;
+}
 
 p {
     color: #555;
@@ -43,7 +54,7 @@ p {
 
 .main-content p {
     margin-top: 0;
-    border-bottom: 2px solid #0c7ae7;
+    border-bottom: 2px solid #555;;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -57,6 +68,9 @@ h2{
 a {
     color: #007bff;
     text-decoration: none;
+}
+span {
+    padding-left: 500px;
 }
   
 a.dec:hover {
@@ -72,22 +86,11 @@ a.dec:hover {
     display: inline-block;
   }
   
-  .cta-button1:hover {
+.cta-button1:hover {
     background-color: #45a049;
-  }
+}
 
-  .cta-button2 {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-    display: inline-block;
-    float:right;
-  }
-  
-  .cta-button2:hover {
+.cta-button2:hover {
     background-color: #45a049;
   }
 

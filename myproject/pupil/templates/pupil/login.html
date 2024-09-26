@@ -14,7 +14,7 @@
         <div class="navbar">
             <div class="logo"><a>secondary school placement system</a></div>    
             <a href="/">Home</a>
-            <a href="/login">Login</a>
+            <a href="/pupil_login">Login</a>
             <a href="/signup">Signup</a>  
         </div>
 
@@ -23,17 +23,18 @@
             <h2>student login</h2>
             <form method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <input type="text" name="username" placeholder="Username or Email" required>
+
+                <input type="text" name="username" placeholder="username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="submit" value="Login">
+
+                {% if error %}
+                    <p style="color: red;text-align:center;">{{ error }}</p>
+                {% endif %}
             </form>
-            <div class="forgot-password">
-                <a href="#">Forgot your password?</a>
-            </div>
         </div>
 
-        {% comment %} footer form  {% endcomment %}
+
         <footer>
             <p>Contact Us: <a href="mailto:cossamsoko7@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
             <p>copyright @2024</p>
