@@ -13,3 +13,6 @@ class ApplicationForm(forms.ModelForm):
         widgets = {
             'gender': forms.RadioSelect,  # Display gender as radio buttons
         }
+
+class ApplicationCheckForm(forms.Form):
+    application_id = forms.IntegerField(label='Application ID')

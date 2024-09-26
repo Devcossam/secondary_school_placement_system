@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
 body {
     font-family: Arial, sans-serif;
-    /* background-color: #f2f2f2; */
     background-image: url("../pictures/img2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -83,6 +82,19 @@ body {
 .login-container .forgot-password a:hover {
     text-decoration: underline;
 }
+
+.cta-button1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.cta-button1:hover {
+      background-color:#007bff; 
+} 
 
 footer {
     background-color: #f1f1f1;

@@ -8,32 +8,26 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}?{% now 'U' %}">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    
     <div class="navbar">
         <div class="logo"><a>secondary school placement system</a></div>
         <a href="/">Home</a>
-        <a href="/login">Login</a>
+        <a href="/pupil_login">Login</a>
         <a href="/signup">Signup</a>
     </div>
 
-    <!-- Signup Form -->
+
     <div class="login-container">
-        <h2>Student Signup</h2>
-        <form action="/signup" method="POST">
-            {% csrf_token %}
-            {% comment %}{{ form.as_p }}  {% endcomment%} <!-- Renders all form fields as <p> elements -->
-                <input type="text" name="firstname" placeholder="firstname" required>
-                <input type="text" name="lastname" placeholder="lastname" required>
-                <input type="text" name="email" placeholder="email" required>
-                <input type="text" name="contact" placeholder="contact" required>
-                <input type="date" name="date-of-birth" placeholder="date-of-birth" required>
-                <input type="text" name="address" placeholder="address" required>
-                <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" value="Signup">
+        <form method="POST" enctype="multipart/form-data">
+            <h2>Student Signup</h2>
+                {% csrf_token %}
+                {{ form.as_p }}
+
+            <button type="submit" class="cta-button1">signup</button>
         </form>
     </div>
 
-    <!-- Footer -->
+    
     <footer>
         <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
         <p>&copy; 2024</p>

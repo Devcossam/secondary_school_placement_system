@@ -10,6 +10,7 @@ body {
     padding: 0;
 }
 
+
 h1, h2 {
     color: #333;
 }
@@ -42,6 +43,18 @@ a:hover {
 }
 .navbar a:hover {
     background-color: #45a049;
+}
+
+.logo a{
+    font-style: italic;
+    color:white;
+    float: left;
+    font-size: medium;
+    background-color: #3ece45;
+}
+  
+.logo a:hover {
+    background-color: #3ece45;
 }
 
 form {
@@ -100,6 +113,19 @@ input[type="submit"]:hover {
 .section {
     margin-bottom: 20px;
 }
+
+.cta-button1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .cta-button1:hover {
+      background-color:#007bff; 
+  } 
 
 footer {
     background-color: #f1f1f1;

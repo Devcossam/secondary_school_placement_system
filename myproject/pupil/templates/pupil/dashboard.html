@@ -8,41 +8,38 @@
     <link rel="stylesheet" href='{% static 'css/landingpage.css' %}?{% now "U" %}'>
 </head>
 <body>
-    <!-- Navigation Bar -->
+
     <div class="navbar">
         <div class="logo"><a>secondary school placement system</a></div>
         <a href="/dashboard">Dashboard</a>
         <a href="/school">Schools</a>
         <a href="">change information</a>  
-        <div class="logout"><a href="/">logout</a></div>
+        <div class="logout"><a href="/pupil_login">logout</a></div>
     </div>
     <div class="container">
-        <!-- Sidebar Navigation -->
+        
         <nav class="sidebar">
-            {% comment %} <h2>School Dashboard</h2> {% endcomment %}
             <ul>
                 <li><a href="/application_form">New Application</a></li>
                 <li><a href="#">Edit/Update Application</a></li>
-                <li><a href="#">View Application status</a></li>
+                <li><a href="/check-status">View Application status</a></li>
             </ul>
         </nav>
 
-        <!-- Main Dashboard Content -->
         <main class="dashboard-content">
-            <!-- Overview Section -->
+            
             <section id="overview" class="dashboard-section">
                 <div class="welcome-message">
                     <p>Welcome {{ pupil.name}}</p>
                 </div> 
                 <div class="main-content">
                     <div class="school-placement">      
-                        <p><strong>Full Names: </strong> {{ pupil.name }}</p>
-                        <p><strong>Email:</strong> <a href="mailto:{{ pupil.email }}">{{ pupil.name}}</a></p>
-                        <p><strong>Phone:</strong> {{ pupil.contact_number }}</p>
-                        <p><strong>Province:</strong> {{ pupil.location }}</p>
-                        <p><strong>Home Address:</strong> {{ pupil.location }}</p> 
-                        <p><strong>Current Grade:</strong> {{ pupil.grade }}</p>
-                        <p><strong>Age :</strong> {{ pupil.age }}</p>
+                        <p><strong>Name: </strong> <span>{{ pupil.name }}</span></p>
+                        <p><strong>Email:</strong> <a href="mailto:{{ pupil.email }}"><span>{{ pupil.email }}</span></a></p>
+                        <p><strong>Phone:</strong> <span>{{ pupil.contact }}</span></p>
+                        <p><strong>Address:</strong> <span>{{ pupil.home_address }}</span></p> 
+                        <p><strong>Grade:</strong><span>{{ pupil.grade }}</span></p>
+                        <p><strong>Joined: </strong><span>{{ pupil.date_joined }}</span></p>
                     </div>
                 </div>
                 <div class="stats">
@@ -52,37 +49,6 @@
 
         </main>
     </div>
-
-
-            <!-- Application Management -->
-            {% comment %} <div class="application-management">
-                <h3>Application Management</h3>
-                <p><a href="/application_form">New Application</a></p>
-                <p><a href="#">Edit/Update Application</a></p>
-                <p><a href="#">Upload Documents</a></p>
-                <p><a href="#">View Application History</a></p>
-            </div>
-        </div> {% endcomment %}
-
-        {% comment %} <div class="main-content"> {% endcomment %}
-            <!-- School Placement Information -->
-            {% comment %} <div class="school-placement">
-                <h3>School Placement Information</h3>
-                <p><a href="/school">Available Schools</a></p>
-                <p><a href="#">Recommended Schools</a></p>
-                <p><a href="#">View Application Status</a></p>
-            </div> {% endcomment %}
-
-            <!-- Resources and Guidance -->
-            {% comment %} <div class="resources">
-                <h3>Resources and Guidance</h3>
-                <p><a href="#">View School Profiles</a></p>
-                <p><a href="#">Placement Tips</a></p>
-                <p><a href="#">Frequently Asked Questions</a></p>
-            </div>
-
-        </div> {% endcomment %}
-    {% comment %} </div> {% endcomment %}
 
     <!-- Footer -->
     <footer>

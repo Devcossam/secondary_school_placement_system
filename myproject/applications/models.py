@@ -7,6 +7,7 @@ class Application(models.Model):
         ('Pending', 'Pending'),
         ('Accepted', 'Accepted'),
         ('Rejected', 'Rejected'),
+        ('in_review', 'In Review'),
     )
     
     GENDER_CHOICES = [

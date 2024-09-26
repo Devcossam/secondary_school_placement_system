@@ -4,7 +4,12 @@ body {
   margin:0;
   /* letter-spacing: 0.64px; */
   /* color: #585d74; */
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
+  background-image: url("../pictures/img2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size:cover;
 }
 
 .navbar {
