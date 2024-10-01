@@ -8,7 +8,9 @@ class SchoolSignupForm(forms.ModelForm):
     
     class Meta:
         model = School
-        fields = ['username','name','email','location','province','contact_number','student_capacity'] 
+        fields = ['username','name','email','location','province','contact_number',
+                  'grade_12_capacity','grade_11_capacity','grade_10_capacity',
+                  'grade_9_capacity','grade_8_capacity'] 
 
     def save(self, commit=True):
         user = User.objects.create_user(
