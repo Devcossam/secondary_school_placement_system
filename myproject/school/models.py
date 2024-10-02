@@ -57,8 +57,6 @@ class School(models.Model):
                                         self.grade_8_enrollment)
 
     
-    # def total_available_space(self):
-    #     return self.total_capacity() - self.total_enrollment()
     def total_available_space(self):
         capacity = self.school_capacity()
         enrollment = self.total_enrollment()

@@ -32,13 +32,14 @@ urlpatterns = [
     path('school/',school_views.school, name='schools'),
     path('school/school_details/<int:id>',school_views.school_details,name="school_details"),
     path('signup/',pupil_views.signup, name='signup'),
+    path('update_information',pupil_views.update_information,name='update_information'),
     path('dashboard/',pupil_views.dashboard,name='dashboard'),
     path('school_dashboard/',school_views.school_dashboard,name="school_dashboard"),
     path('school_signup/',school_views.school_signup,name="school_signup"),
+    path('pupil_applications/',school_views.pupil_applications,name="pupil_applications"),
     path('school_search/',school_views.school_search,name="school_search"),
     path('application_form/',application_views.application_form,name="applicationform"),
-    # path('application/<int:application_id>/',application_views.view_application_status, name='view_application_status'),
+    path('view_applications/',application_views.view_applications,name="view_applications"),
+    # path('edit_application/<int:application_id>/',application_views.edit_application,name="edit_application"),
     path('check-status/', application_views.check_application_status, name='check_application_status'),
-
-    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>application form</title>
+    <title>application form | Secondary School Placement System</title>
     <link rel="stylesheet" href='{% static 'css/applicationform.css' %}?{% now "U" %}'>
 </head>
 <body>
@@ -15,10 +15,23 @@
         <a href="/school">Schools</a>
         <a href="#">Change Information</a> 
     </div>
+        <h1>
+            {% if form.instance.id %}
+            Edit Application
+            {% else %}
+            Submit Application
+            {% endif %}
+        </h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="cta-button1">Submit</button>
+
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+
+            <button type="submit" class="cta-button1">
+                {% if form.instance.id %}Update Application{% else %}Submit Application{% endif %}</button>
         </form>
     
     <footer>

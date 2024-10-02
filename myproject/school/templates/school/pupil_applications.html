@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Available Schools | Secondary School Placement System</title>
+    <title>Pending Applications | Secondary School Placement System</title>
     <link rel="stylesheet" href='{% static 'css/schools.css' %}?{% now "U" %}'>
 </head>
 <body>
@@ -17,28 +17,26 @@
     </div>
 
     <div class="content">
-        <h1>Available Schools</h1>
-
-        <div class="search-button">
-            <a href="{% url 'school_search' %}">
-                <button type="button" class="search-button">Search schools</button>
-            </a>
-        </div>
+        <h1>Pending Applications</h1>
 
         <table class="school-table">
             <thead>
                 <tr>
-                    <th>School Name</th>
-                    <th>School Province</th>
+                    <th>Pupil Name</th>
+                    <th>Grade</th>
+                    <th>Application Date</th>
+                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for school in schools %}
                     <tr>
-                        <td>{{ school.name }}</td>
-                        <td>{{ school.province }}</td>
-                        <td><a href="{% url 'school_details' id=school.id %}" class="cta-button1">View</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href=""></a></td>
                     </tr>
                 {% endfor %}
             </tbody>

@@ -9,4 +9,5 @@ urlpatterns = [
     path('schools/school_details/<int:id>/',views.school_details, name="school_details"),
     path('school_dashboard/',views.school_dashboard,name="school_dashboard"),
     path('search/', views.school_search, name='school_search'),
+    path('pupil_applications/',views.pupil_applications,name="pupil_applications"),
 ]

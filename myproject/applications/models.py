@@ -14,6 +14,14 @@ class Application(models.Model):
         ('male', 'Male'),
         ('female', 'Female'),
     ]
+
+    GRADE_CHOICES = [
+        ('grade_12', 'Grade 12'),
+        ('grade_11', 'Grade 11'),
+        ('grade_10', 'Grade 10'),
+        ('grade_9', 'Grade 9'),
+        ('grade_8', 'Grade 8'),
+    ]
     
     # Foreign Key relationships
     pupil = models.ForeignKey(Pupil, null=True, blank=True, on_delete=models.SET_NULL)
@@ -31,7 +39,7 @@ class Application(models.Model):
     student_email = models.EmailField(blank=True,null=True)
     address = models.CharField(max_length=255, blank=True,null=True)
     province = models.CharField(max_length=100, blank=True,null=True)
-    grade_level = models.CharField(max_length=50, blank=True,null=True)
+    grade_level = models.CharField(max_length=50, choices=GRADE_CHOICES, blank=True, null=True)  # Add choices for grade levels
     last_school = models.CharField(max_length=100, blank=True,null=True)
     last_school_address = models.CharField(max_length=255, blank=True,null=True)
 

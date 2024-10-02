@@ -7,6 +7,8 @@ from .forms import SchoolSearchForm
 from .forms import SchoolSignupForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from applications.models import Application
+
 
 # Create your views here.
 def school(request):
@@ -16,6 +18,15 @@ def school(request):
         'schools':schools,
     }
     return HttpResponse(template.render(context,request))
+
+def pupil_applications(request):
+    schools = School.objects.all().values()
+    template = loader.get_template('school/pupil_applications.html')
+    context = {
+        'schools':schools,
+    }
+    return HttpResponse(template.render(context,request))
+
 
 # def school(request):
 #     form = SchoolSearchForm(request.GET or None)  # Initialize the form with GET data
@@ -72,7 +83,13 @@ def school_details(request, id):
 @login_required
 def school_dashboard(request):
     school = request.user.school
-    return render(request,"school/school_dashboard.html",{'school':school})
+    pending_applications = Application.objects.filter(school=school, status='Pending')
+    pending_count = pending_applications.count() 
+    return render(request,"school/school_dashboard.html",{
+        'school':school,
+        'pending_applications': pending_applications,
+        'pending_count': pending_count,
+        })
 
 def school_search(request):
     form = SchoolSearchForm()
