@@ -5,8 +5,10 @@ from django import forms
 from .models import Pupil
 from django.shortcuts import render, redirect
 from .forms import PupilSignupForm
+from .forms import PupilUpdateForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
@@ -43,5 +45,18 @@ def signup(request):
 def dashboard(request):
     pupil = request.user.pupil  # Access the related Pupil instance
     return render(request, 'pupil/dashboard.html', {'pupil': pupil})
+
+@login_required
+def update_information(request):
+    pupil = request.user.pupil  # Get the pupil instance
+    if request.method == "POST":
+        form = PupilUpdateForm(request.POST, instance=pupil)
+        if form.is_valid():
+            form.save()  # Save the updated information
+            return redirect('/dashboard')  # Redirect to the dashboard or a success page
+    else:
+        form = PupilUpdateForm(instance=pupil)  # Prepopulate the form with current pupil data
+
+    return render(request, 'pupil/update_information.html', {'form': form})
     
 

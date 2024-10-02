@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Dashboard</title>
+    <title>School Dashboard | Secondary School Placement System</title>
     <link rel="stylesheet" href='{% static 'css/schooldashboard.css' %}?{% now "U" %}'>
 </head>
 <body>
@@ -21,7 +21,7 @@
             <h2>{{ school.name }}</h2>
             <ul>
                 <li><a href="#overview">Overview</a></li>
-                <li><a href="#applications">Student Applications</a></li>
+                <li><a href="/pupil_applications">Check Pending Applications</a></li>
                 <li><a href="#seats">Manage Seats</a></li>
                 <li><a href="#reports">Generate Reports</a></li>
                 <li><a href="#profile">School Profile</a></li>
@@ -40,16 +40,16 @@
                         <p>{{ school.school_capacity }}</p>
                     </div>
                     <div class="stat-box">
-                        <h3>Total Applications</h3>
-                        <p>150</p>
+                        <h3>Total Available Space</h3>
+                        <p>{{ school.total_available_space }}</p>
                     </div>
                     <div class="stat-box">
-                        <h3>Accepted Students</h3>
-                        <p>45</p>
+                        <h3>Total Enrolled Pupils</h3>
+                        <p>{{ school.total_enrollment }}</p>
                     </div>
                     <div class="stat-box">
                         <h3>Pending Applications</h3>
-                        <p>10</p>
+                        <p>{{ pending_count }}</p>
                     </div>
                 </div>
             </section>

@@ -4,26 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Signup | Secondary School Placement System</title>
+    <title>Update Information | Secondary School Placement System</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}?{% now 'U' %}">
 </head>
 <body>
-    
-    <div class="navbar">
-        <div class="logo"><a>secondary school placement system</a></div>
-        <a href="/">Home</a>
-        <a href="/pupil_login">Login</a>
-        <a href="/signup">Signup</a>
-    </div>
-
+      <div class="navbar">
+      <div class="logo"><a>secondary school placement system</a></div>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/school">Schools</a>
+      <a href="/update_information">Change Information</a>  
+      <div class="logout"><a href="/pupil_login">logout</a></div>
+   </div>
 
     <div class="login-container">
         <form method="POST" enctype="multipart/form-data">
-            <h2>Student Signup</h2>
+            <h2>Update your Information</h2>
                 {% csrf_token %}
                 {{ form.as_p }}
 
-            <button type="submit" class="cta-button1">signup</button>
+            <button type="submit" class="cta-button1">save changes</button>
         </form>
     </div>
 

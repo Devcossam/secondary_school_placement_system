@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications | Secondary School Placement System</title>
+    <link rel="stylesheet" href='{% static 'css/listOfApplications.css' %}?{% now "U" %}'>
+    
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo"><a>Secondary School Placement System</a></div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/school">Schools</a>
+        <a href="">Change Information</a>
+        <div class="logout"><a href="/pupil_login">Logout</a></div>
+    </div>
+
+    <h1>My Applications</h1> <!-- Title centered above the container -->
+
+    <div class="container">
+        {% if applications %}
+            <ul>
+                {% for application in applications %}
+                    <li>
+                        <div class="application-details">
+                            <strong>Application ID: {{ application.id }}</strong><br>
+                            <strong>Status:</strong> {{ application.status }}<br>
+                            <strong>Submitted on:</strong> {{ application.date_applied }}<br>
+                            <strong>School:</strong> {{ application.school }} <!-- Adjust based on your model -->
+                        </div>
+                        <div class="buttons">
+                            <a href="">
+                                <button class="edit-btn">Edit</button>
+                            </a>
+                            <form action="" method="POST" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="delete-btn">Delete</button>
+                            </form>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No applications found.</p>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>Contact Us: <a href="mailto:schoolservices3@gmail.com">schoolservices3@gmail.com</a></p>
+        <p>© 2024 School Placement System</p>
+    </footer>
+</body>
+</html>
+

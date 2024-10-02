@@ -20,4 +20,18 @@ class PupilSignupForm(forms.ModelForm):
         if commit:
             pupil.save()
         return pupil
+    
+class PupilUpdateForm(forms.ModelForm):
+    
+    class Meta:
+        model = Pupil
+        fields = ['name', 'email', 'contact', 'grade', 'home_address']  # Exclude username and password
+
+    def save(self, commit=True):
+        pupil = super().save(commit=False)
+        if commit:
+            pupil.save()
+        return pupil
+
+
 
