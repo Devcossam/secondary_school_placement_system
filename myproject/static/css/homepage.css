@@ -1,15 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
 body {
   font-family: Arial, sans-serif;
+<<<<<<< HEAD
   margin:0;
   /* letter-spacing: 0.64px; */
   /* color: #585d74; */
   background-color: #f1f1f1;
+=======
+  background-image: url("../pictures/img2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+html, body {
+  height: 100%; /* Ensure full height of the viewport */
+  margin: 0; /* Remove default margins */
+>>>>>>> testing
 }
 
 .navbar {
   background-color: #4CAF50;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .navbar a {
@@ -39,7 +54,16 @@ body {
     text-align:center;
   }
   
+<<<<<<< HEAD
+=======
+  
+  /* main {
+    padding: 20px;
+  } */
+
+>>>>>>> testing
   main {
+    flex: 1; /* Take up remaining space, pushing footer down */
     padding: 20px;
   }
   
@@ -165,16 +189,22 @@ body {
     margin-top: 5px;
   }
   
+  
+  /* Main content should expand to take the available space */
+  
+  
   footer {
     background-color: #f1f1f1;
     color: #555;
     padding: 20px;
     text-align: center;
+    margin-top: auto; /* Ensure the footer stays at the bottom */
   }
-  
+
   footer p {
     margin: 3px 0;
   }
+  
   
   
   

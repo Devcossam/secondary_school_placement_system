@@ -10,6 +10,9 @@ class Pupil(models.Model):
     date_joined = models.DateTimeField(auto_now=True,null=True,blank=True)
     grade = models.CharField(max_length=30,null=True)
     home_address = models.CharField(max_length=200,null=True)
+
+    class Meta:
+        db_table = 'pupil'
     
     def __str__(self):
         return f"{self.name}"

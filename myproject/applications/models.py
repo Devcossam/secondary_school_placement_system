@@ -48,10 +48,13 @@ class Application(models.Model):
     parent_phone = models.CharField(max_length=15, blank=True,null=True)
 
     # File Uploads
-    documents = models.FileField(upload_to='documents/', blank=True, null=True)
+    appload_results = models.FileField(upload_to='documents/', blank=True, null=True)
 
     # Health History
     health_history = models.TextField(blank=True,null=True)
+
+    class Meta:
+        db_table = 'application'
 
     def __str__(self):
         return f"Application by {self.name} for {self.school if self.school else 'unspecified school'}"

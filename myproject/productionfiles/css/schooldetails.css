@@ -69,8 +69,19 @@ a {
     color: #007bff;
     text-decoration: none;
 }
-span {
+/* span {
     padding-left: 500px;
+} */
+
+.school-placement p {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the start */
+    align-items: center; /* Vertically aligns them if needed */
+    flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+.school-placement p strong {
+    margin-right: 20px; /* Adds space between the label and the value */
 }
   
 a.dec:hover {
@@ -90,9 +101,6 @@ a.dec:hover {
     background-color: #45a049;
 }
 
-.cta-button2:hover {
-    background-color: #45a049;
-  }
 
 footer {
     background-color: #f1f1f1;

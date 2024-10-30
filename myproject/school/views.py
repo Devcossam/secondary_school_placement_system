@@ -1,13 +1,17 @@
 from django.http import HttpResponse
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.template import loader 
 from .models import School
+from .models import Rating
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SchoolSearchForm
 from .forms import SchoolSignupForm
+from .forms import RatingForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from applications.models import Application
+from django.db.models import Avg
+from django.contrib import messages
 
 
 # Create your views here.
@@ -20,30 +24,15 @@ def school(request):
     return HttpResponse(template.render(context,request))
 
 def pupil_applications(request):
-    schools = School.objects.all().values()
+    school = request.user.school
+    pending_applications = Application.objects.filter(school=school, status='Pending')
+   
     template = loader.get_template('school/pupil_applications.html')
     context = {
-        'schools':schools,
+        'pending_applications': pending_applications,
     }
     return HttpResponse(template.render(context,request))
 
-
-# def school(request):
-#     form = SchoolSearchForm(request.GET or None)  # Initialize the form with GET data
-#     schools = School.objects.all()  # Default to showing all schools
-#     results = schools  # This will be used to display either all or filtered results
-
-#     if form.is_valid():  # If form is valid (i.e., it has search input)
-#         query = form.cleaned_data.get('query')  # Get the search input from the form
-#         if query:  # If there is a search query, filter the schools
-#             results = schools.filter(name__icontains=query)
-
-#     context = {
-#         'form': form,        # Pass the search form to the template
-#         'schools': results,  # Either all schools or the filtered list (search results)
-#     }
-
-    # return render(request, 'school/schools.html', context)
 
 def school_signup(request):
     if request.method == "POST":
@@ -102,3 +91,99 @@ def school_search(request):
             results = School.objects.filter(name__icontains=query)
 
     return render(request, 'school/school_search.html', {'form': form, 'results': results})
+
+
+# @login_required
+# def rate_school(request, school_id):
+#     school = get_object_or_404(School, pk=school_id)
+#     # rating, created = Rating.objects.get_or_create(user=request.user, school=school)
+    
+#     if request.method == 'POST':
+#         form = RatingForm(request.POST, instance=rating)
+#     #     if form.is_valid():
+#     #         form.save()
+#     #         return redirect('school/school_detail', school_id=school.id)
+#     # else:
+#         # form = RatingForm(instance=rating)
+
+#     return render(request, 'school/rate_school.html', {'school': school})
+
+def top_rated_schools(request):
+    top_schools = School.get_top_rated_schools()
+    return render(request, 'school/top_rated_schools.html', {'top_schools': top_schools})
+
+def school_ratings(request, school_id):
+    school = get_object_or_404(School, id=school_id)
+    ratings = school.ratings.all()
+    user_rating = None
+
+    if request.user.is_authenticated:
+        try:
+            user_rating = Rating.objects.get(school=school, user=request.user)
+        except Rating.DoesNotExist:
+            pass
+
+    context = {
+        'school': school,
+        'ratings': ratings,
+        'user_rating': user_rating,
+    }
+
+    return render(request, 'school/school_ratings.html', context)
+
+# @login_required
+# def rate_school(request, school_id):
+#     school = get_object_or_404(School, id=school_id)
+
+#     try:
+#         rating = Rating.objects.get(school=school, user=request.user)
+#     except Rating.DoesNotExist:
+#         rating = None
+
+#     if request.method == 'POST':
+#         form = RatingForm(request.POST, instance=rating)
+#         if form.is_valid():
+#             rating = form.save(commit=False)
+#             rating.user = request.user
+#             rating.school = school
+#             rating.save()
+#             return redirect('school/<int:school_id>/', school_id=school.id)
+#     else:
+#         form = RatingForm(instance=rating)
+
+#     return render(request, 'school/rate_school.html', {'form': form, 'school': school})
+
+@login_required
+def rate_school(request, school_id):
+    school = get_object_or_404(School, id=school_id)
+
+    # Check if the user has already rated the school
+    try:
+        rating = Rating.objects.get(school=school, user=request.user)
+        already_rated = True
+    except Rating.DoesNotExist:
+        rating = None
+        already_rated = False
+
+    if request.method == 'POST':
+        # Use the existing rating if editing
+        form = RatingForm(request.POST, instance=rating)  
+        if form.is_valid():
+            # Save the new or updated rating
+            rating = form.save(commit=False)
+            rating.user = request.user
+            rating.school = school
+            rating.save()
+            messages.success(request, 'Your rating has been submitted successfully.')
+            return redirect('rate_school', school_id=school.id)
+
+    else:
+        # On GET request, show the form with existing rating for editing
+        form = RatingForm(instance=rating) if already_rated else RatingForm()
+
+    context = {
+        'form': form,
+        'school': school,
+        'already_rated': already_rated
+    }
+    return render(request, 'school/rate_school.html', context)

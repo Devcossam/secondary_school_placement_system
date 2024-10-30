@@ -6,9 +6,13 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size:cover;
-    margin: 0;
     padding: 0;
 }
+
+html, body {
+    height: 100%; /* Ensure full height of the viewport */
+    margin: 0; /* Remove default margins */
+  }
 .navbar {
     background-color: #4CAF50;
     overflow: hidden;
@@ -95,24 +99,32 @@ body {
 .cta-button1:hover {
       background-color:#007bff; 
 } 
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+  
+a.dec:hover {
+    text-decoration: underline;
+}
 
+/* footer {
+    background-color: #f1f1f1;
+    color: #555;
+    padding: 20px;
+    text-align: center;
+} */
 footer {
     background-color: #f1f1f1;
     color: #555;
     padding: 20px;
     text-align: center;
-}
+    margin-top: auto; /* Ensure the footer stays at the bottom */
+  }
   
   footer p {
     margin: 3px 0;
 }
 
-a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  a.dec:hover {
-    text-decoration: underline;
-  }
+
   

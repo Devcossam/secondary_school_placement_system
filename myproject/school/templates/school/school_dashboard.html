@@ -11,8 +11,7 @@
     <div class="navbar">
         <div class="logo"><a>secondary school placement system</a></div>
         <a href="/school_dashboard">Dashboard</a>
-        <a href="#">Profile</a>  
-        <a href="#">About</a>
+        <a href="{% url 'notifications:school_notifications' %}">Notifications</a>
         <div class="logout"><a href="/school_login">logout</a></div>  
     </div>
     <div class="container">
@@ -22,9 +21,6 @@
             <ul>
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="/pupil_applications">Check Pending Applications</a></li>
-                <li><a href="#seats">Manage Seats</a></li>
-                <li><a href="#reports">Generate Reports</a></li>
-                <li><a href="#profile">School Profile</a></li>
                 <li><a href="#settings">Settings</a></li>
             </ul>
         </nav>
@@ -52,63 +48,22 @@
                         <p>{{ pending_count }}</p>
                     </div>
                 </div>
+                <div class="main-content">
+                    <div class="school-placement">      
+                        <p><strong>Name: </strong> <span>{{ school.name }}</span></p>
+                        <p><strong>Email: </strong> <a href="mailto:{{ school.email }}"><span>{{ school.email }}</span></a></p>
+                        {% comment %} <p><strong>Address:</strong> <span>{{ school.address }}</span></p> 
+                        <p><strong>Location:</strong> <span>{{ school.location }}</span></p> {% endcomment %}
+                        <p><strong>Province: </strong><span>{{ school.province }}</span></p>
+                        <p><strong>Joined: </strong><span>{{ school.date_joined }}</span></p>
+                    </div>
+                </div>
             </section>
-
-            
-            <section id="applications" class="dashboard-section">
-                <h2>Student Applications</h2>
-                <table class="applications-table">
-                    <thead>
-                        <tr>
-                            <th>Student Name</th>
-                            <th>Grade</th>
-                            <th>Application Date</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>8th Grade</td>
-                            <td>September 1, 2024</td>
-                            <td>Pending</td>
-                            <td><button class="accept-btn">Accept</button> <button class="reject-btn">Reject</button></td>
-                        </tr>
-                        <tr>
-                            <td>Jane Smith</td>
-                            <td>9th Grade</td>
-                            <td>September 2, 2024</td>
-                            <td>Accepted</td>
-                            <td><button class="view-btn">View</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            {% comment %}
-            <section id="seats" class="dashboard-section">
-                <h2>Manage Available Seats</h2>
-                <form id="seatsForm">
-                    <label for="totalSeats">Total Seats Available:</label>
-                    <input type="number" id="totalSeats" name="totalSeats" value="50">
-
-                    <input type="submit" value="Update Seats">
-                </form>
-            </section>
-            {% endcomment %}
-
-            {% comment %}
-            <section id="reports" class="dashboard-section">
-                <h2>Generate Reports</h2>
-                <button class="generate-btn">Download Student Data</button>
-            </section>
-            {% endcomment %}
         </main>
     </div>
     <footer>
         <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
-        <p>&copy; 2024</p>
+        <p>copyright ©2024 Secondary School Placement System</p>
     </footer>
 </body>
 </html>

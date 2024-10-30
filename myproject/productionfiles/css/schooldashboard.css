@@ -54,7 +54,6 @@ html, body {
 /* Sidebar Styles */
 .sidebar {
     width: 300px;
-    /* background-color: #343a40; */
     background-color: #4CAF50;
     padding: 20px;
     color: white;
@@ -107,7 +106,6 @@ html, body {
 .stat-box {
     width: 23%;
     padding: 20px;
-    /* background-color: #007bff; */
     background-color: #4CAF50;
     color: white;
     text-align: center;
@@ -118,14 +116,16 @@ html, body {
     margin-bottom: 10px;
     font-size: 1.2rem;
 }
-
-/* Student Applications Table */
-.applications-table {
-    width: 100%;
-    border-collapse: collapse;
+.main-content {
+    flex: 3;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
+<<<<<<< HEAD
 .applications-table th, .applications-table td {
     padding: 10px;
     border: 1px solid #ddd;
@@ -175,23 +175,27 @@ button {
 
 #seatsForm input {
     padding: 10px;
+=======
+.main-content p {
+    margin-top: 0;
+    border-bottom: 2px solid #0c7ae7;
+    padding-bottom: 10px;
+>>>>>>> testing
     margin-bottom: 20px;
-    width: 200px;
 }
 
-input[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
+.school-dashboard p {
+    color: #555;
+}
+.school-placement p {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the start */
+    align-items: center; /* Vertically aligns them if needed */
+    flex-wrap: nowrap; /* Prevents wrapping */
 }
 
-/* Generate Reports */
-.generate-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.school-placement p strong {
+    margin-right: 10px; /* Adds space between the label and the value */
 }
 
 /* Footer Styles */

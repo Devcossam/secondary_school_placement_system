@@ -10,4 +10,8 @@ urlpatterns = [
     path('school_dashboard/',views.school_dashboard,name="school_dashboard"),
     path('search/', views.school_search, name='school_search'),
     path('pupil_applications/',views.pupil_applications,name="pupil_applications"),
+    # path('rate/<int:school_id>/', views.rate_school, name='rate_school'),
+    path('top_rated_schools/', views.top_rated_schools, name='top_schools'),
+    path('school/<int:school_id>/', views.school_ratings, name='school_ratings'),
+    path('school/<int:school_id>/rate/', views.rate_school, name='rate_school'),
 ]

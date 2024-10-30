@@ -1,0 +1,8 @@
+<h1>Top Rated Schools</h1>
+<ul>
+    {% for school in top_schools %}
+        <li>{{ school.name }} - Total Stars: {{ school.total_stars }}</li>
+    {% empty %}
+        <li>No top rated schools at the moment.</li>
+    {% endfor %}
+</ul>

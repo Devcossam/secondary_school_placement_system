@@ -14,6 +14,7 @@
     <div class="navbar">
         <div class="logo"><a>secondary school placement system</a></div>
         <a href="/dashboard">Dashboard</a>
+        <a href="{% url 'notifications:student_notifications' %}">Notifications</a>
         <a href="/school">Schools</a>
         <a href="/update_information">Change Information</a>  
         <div class="logout"><a href="/pupil_login">logout</a></div>
@@ -24,8 +25,7 @@
             <ul>
                 <li><a href="/application_form">New Application</a></li>               
                 <li><a href="/view_applications">My Applications</a></li>
-                <li><a href="">top ranked schools</a></li>
-                <li><a href="/check-status">View Application status</a></li>
+                <li><a href="/top_rated_schools">top ranked schools</a></li>
             </ul>
         </nav>
 
@@ -44,9 +44,6 @@
                         <p><strong>Grade:</strong><span>{{ pupil.grade }}</span></p>
                         <p><strong>Joined: </strong><span>{{ pupil.date_joined }}</span></p>
                     </div>
-                </div>
-                <div class="stats">
-                          
                 </div>
             </section>
 
