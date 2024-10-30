@@ -10,12 +10,14 @@
 <body>
     <div class="status-container">
         <div class="status-header">
-            <h1>Application Status</h1>
+            <h1>My Applications</h1>
             <button onclick="window.history.back();" class="close-button">✖</button>
         </div>
         <div class="status-content">
-            <p>Status: {{ application.status }}</p>
-            <p>Date Applied: {{ application.date_applied }}</p>
+            {% comment %} <p>Status: {{ application.status }}</p>
+            <p>Date Applied: {{ application.date_applied }}</p> {% endcomment %}
+            <h1>No Application Found</h1>
+            <p>You do not have an application submitted yet.</p>
         </div>
     </div>
 </body>

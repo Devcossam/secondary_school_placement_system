@@ -30,7 +30,8 @@
                 <tr>
                     <th>School Name</th>
                     <th>School Province</th>
-                    <th>Actions</th>
+                    <th>School Ratings</th>
+                    <th>School Details</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +39,7 @@
                     <tr>
                         <td>{{ school.name }}</td>
                         <td>{{ school.province }}</td>
+                        <td><a href="{% url 'school_ratings' school_id=school.id %}" class="cta-button1">View</a></td> 
                         <td><a href="{% url 'school_details' id=school.id %}" class="cta-button1">View</a></td>
                     </tr>
                 {% endfor %}
@@ -47,7 +49,7 @@
 
     <footer>
         <p>Contact Us: <a href="mailto:cossamsoko7@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
-        <p>Copyright @2024</p>
+        <p>copyright ©2024 Secondary School Placement System</p>
     </footer>
 </body>
 </html> 

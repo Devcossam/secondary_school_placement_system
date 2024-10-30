@@ -14,7 +14,7 @@
         <div class="logo"><a>secondary school placement system</a></div> 
         <a href="/dashboard">Dashboard</a>
         <a href="/school">Schools</a>
-        <a href="#">Change Information</a>  
+        <a href="/update_information">Change Information</a>  
           
     </div>
 
@@ -23,21 +23,26 @@
     </div>
 
     <div class="main-content">
+        <section id="overview" class="dashboard-section">
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>School Email</h3>
+                    <p><span><a href="mailto:{{ school.email }}">{{ school.email }}</a></span></p>
+                </div>
+                <div class="stat-box">
+                    <h3>School Location</h3>
+                    <p><span>{{ school.province }} {{ school.location }}</span></p>  
+
+                </div>
+            </div>
         
         <div class="school-placement">
-            <p><strong>Name    :</strong> <span>{{ school.name }}</span></p>
-            <p><strong>Email   :</strong> <span><a href="mailto:{{ school.email }}">{{ school.email }}</a></span></p>
-            <p><strong>Phone   :</strong> <span>{{ school.contact_number }}</span></p>
-            <p><strong>Location:</strong> <span>{{ school.location }}</span></p>
-            <p><strong>Province:</strong> <span>{{ school.province }}</span></p>
-            {% comment %} <p><strong>Grade 12 Capacity:</strong> <span>{{ school.grade_12_capacity }}</span></p>  {% endcomment %}
-            <p><strong>Grade 12 Capacity:</strong> <span>{{ school.grade_12_capacity }}</span> | <strong>Available: </strong><span>{{ school.available_space_grade_12 }}</span></p>
-            <p><strong>Grade 11 Capacity:</strong> <span>{{ school.grade_11_capacity }}</span> | <strong>Available: </strong><span>{{ school.available_space_grade_11 }}</span></p>
-            <p><strong>Grade 10 Capacity:</strong> <span>{{ school.grade_10_capacity }}</span> | <strong>Available: </strong><span>{{ school.available_space_grade_11 }}</span></p>
-            <p><strong>Grade 9 Capacity:</strong> <span>{{ school.grade_9_capacity }}</span> | <strong>Available: </strong><span>{{ school.available_space_grade_11 }}</span></p>
-            <p><strong>Grade 8 Capacity:</strong> <span>{{ school.grade_8_capacity }}</span> | <strong>Available: </strong><span>{{ school.available_space_grade_11 }}</span></p> 
-            <p><strong>school Capacity:</strong> <span>{{ school.school_capacity }}</span> | <strong> total Available: </strong><span>{{ school.total_available_space }}</span></p>  
-            {% comment %} <p><strong>Type    :</strong> <span>{{ school.type }}</span></p> {% endcomment %} 
+            <p><strong>Grade 12 Capacity:</strong> <span>{{ school.grade_12_capacity }}</span> | <strong>Available Space: </strong><span>{{ school.available_space_grade_12 }}</span></p>
+            <p><strong>Grade 11 Capacity:</strong> <span>{{ school.grade_11_capacity }}</span> | <strong>Available Space: </strong><span>{{ school.available_space_grade_11 }}</span></p>
+            <p><strong>Grade 10 Capacity:</strong> <span>{{ school.grade_10_capacity }}</span> | <strong>Available Space: </strong><span>{{ school.available_space_grade_10 }}</span></p>
+            <p><strong>Grade 9 Capacity:</strong> <span>{{ school.grade_9_capacity }}</span> | <strong>Available Space: </strong><span>{{ school.available_space_grade_9 }}</span></p>
+            <p><strong>Grade 8 Capacity:</strong> <span>{{ school.grade_8_capacity }}</span> | <strong>Available Space: </strong><span>{{ school.available_space_grade_8 }}</span></p> 
+            <p><strong>school Capacity:</strong> <span>{{ school.school_capacity }}</span> | <strong> total Available Space: </strong><span>{{ school.total_available_space }}</span></p>  
             <a href="/school" class="cta-button1">back</a>
         </div>
 
@@ -45,7 +50,7 @@
 
     <footer>
         <p>Contact Us: <a href="mailto:schoolservices3@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
-        <p>&copy; 2024</p>
+        <p>copyright ©2024 Secondary School Placement System</p>
     </footer>
 </body>
 </html>

@@ -1,5 +1,5 @@
 from django import forms
-from .models import School
+from .models import School,Rating
 from django.contrib.auth.models import User
 
 class SchoolSignupForm(forms.ModelForm):
@@ -22,8 +22,14 @@ class SchoolSignupForm(forms.ModelForm):
         if commit:
             school.save()
         return school
-
-
+    
+class RatingForm(forms.ModelForm):
+    class Meta:
+        model = Rating
+        fields = ['score', 'comment']
+        widgets = {
+            'score': forms.RadioSelect(choices=[(i, str(i)) for i in range(1, 6)]),
+        }
 
 
 class SchoolSearchForm(forms.Form):

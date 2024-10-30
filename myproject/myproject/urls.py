@@ -40,6 +40,12 @@ urlpatterns = [
     path('school_search/',school_views.school_search,name="school_search"),
     path('application_form/',application_views.application_form,name="applicationform"),
     path('view_applications/',application_views.view_applications,name="view_applications"),
+    path('applications/<int:id>/edit/', application_views.edit_application, name='edit_application'),
+    path('applications/<int:id>/delete/', application_views.delete_application, name='delete_application'),
     # path('edit_application/<int:application_id>/',application_views.edit_application,name="edit_application"),
-    path('check-status/', application_views.check_application_status, name='check_application_status'),
+    # path('rate/<int:school_id>/', school_views.rate_school, name='rate_school'),
+    path('top_rated_schools/', school_views.top_rated_schools, name='top_schools'),
+    path('school/<int:school_id>/', school_views.school_ratings, name='school_ratings'),
+    path('school/<int:school_id>/rate/', school_views.rate_school, name='rate_school'),
+    path('notifications/', include('notifications.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

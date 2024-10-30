@@ -1,0 +1,16 @@
+<h1>{{ dashboard_type|title }} Notifications</h1>
+
+<ul>
+  {% for notification in notifications %}
+    <li>
+      <strong>{{ notification.timestamp }}</strong>: {{ notification.message }}
+      {% if not notification.is_read %}
+        <a href="{% url 'notifications:mark_notification_as_read' notification.id %}">Mark as read</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+{% if not notifications %}
+  <p>No notifications available.</p>
+{% endif %}

@@ -6,20 +6,18 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pending Applications | Secondary School Placement System</title>
-    <link rel="stylesheet" href='{% static 'css/schools.css' %}?{% now "U" %}'>
+    <link rel="stylesheet" href='{% static 'css/pupilApplications.css' %}?{% now "U" %}'>
 </head>
 <body>
     <div class="navbar">
         <div class="logo"><a>Secondary School Placement System</a></div>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/school">Schools</a>
-        <a href="/update_information">Change Information</a>
+        <a href="/school_dashboard">Dashboard</a>
     </div>
 
     <div class="content">
         <h1>Pending Applications</h1>
 
-        <table class="school-table">
+        <table class="applications-table">
             <thead>
                 <tr>
                     <th>Pupil Name</th>
@@ -30,13 +28,13 @@
                 </tr>
             </thead>
             <tbody>
-                {% for school in schools %}
+                {% for application in pending_applications %}
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href=""></a></td>
+                        <td>{{ application.pupil }}</td>
+                        <td>{{ application.pupil.grade }}</td>
+                        <td>{{ application.date_applied }}</td>
+                        <td>{{ application.status }}</td>
+                        <td><button class="accept-btn">Accept</button> <button class="reject-btn">Reject</button> <button class="view-btn">View</button></td><a href=""></a></td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -45,7 +43,7 @@
 
     <footer>
         <p>Contact Us: <a href="mailto:cossamsoko7@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
-        <p>Copyright @2024</p>
+        <p>copyright ©2024 Secondary School Placement System</p>
     </footer>
 </body>
 </html> 

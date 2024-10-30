@@ -1,12 +1,20 @@
-<!-- templates/no_application_found.html -->
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static 'css/noApplicationFound.css' %}?{% now "U" %}'>
     <title>No Application Found | Secondary School Placement System</title>
 </head>
 <body>
-    <h1>No Application Found</h1>
-    <p>You do not have an application submitted yet.</p>
+    <div class="wrapper">
+        <div class="container">
+            <h1>No Application Found</h1>
+            <p>You have not submitted any applications yet. Explore the available schools and start your application process now!</p>
+            <a href="/school" class="button">Explore Schools</a>
+            <a href="/dashboard" class="button" style="margin-left: 10px;">Go to Dashboard</a>
+        </div>
+    </div>
 </body>
 </html>
