@@ -63,11 +63,9 @@ ul {
 
 li {
     background-color: #ffffff;
-<<<<<<< HEAD
+    /* background-image: linear-gradient(to right, #4CAF50, #4CAF50);  */
     background-size: 50px 60px;
     background-repeat: no-repeat;
-=======
->>>>>>> testing
     cursor: pointer;
     transition: transform .25s;
     border-radius: 5px;
