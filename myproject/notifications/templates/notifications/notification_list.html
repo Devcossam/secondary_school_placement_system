@@ -7,6 +7,15 @@
       {% if not notification.is_read %}
         <a href="{% url 'notifications:mark_notification_as_read' notification.id %}">Mark as read</a>
       {% endif %}
+
+      {% if "accepted" in notification.message|lower and notification.application %}
+        <a href="{% url 'confirm_enrollment' notification.application.id %}" class="confirm-btn">Confirm Enrollment</a>
+        
+      {% endif %}
+
+      {% if "confirmed" in notification.message|lower and notification.application %}
+        <a href="{% url 'finalize_enrollment' notification.application.id %}" class="confirm-btn">finalize Enrollment</a>
+      {% endif %}
     </li>
   {% endfor %}
 </ul>
@@ -14,3 +23,5 @@
 {% if not notifications %}
   <p>No notifications available.</p>
 {% endif %}
+
+

@@ -249,6 +249,17 @@ def view_applications(request):
     except AttributeError:
         return render(request, 'applications/no_application_found.html', {'message': 'No pupil associated with this user.'})
 
+
+def pupil_applications(request):
+    school = request.user.school
+    pending_applications = Application.objects.filter(school=school, status='Pending')
+   
+    template = loader.get_template('applications/pupil_applications.html')
+    context = {
+        'pending_applications': pending_applications,
+    }
+    return HttpResponse(template.render(context,request))
+
 @login_required
 def edit_application(request, id):
     application = get_object_or_404(Application, id=id, pupil=request.user.pupil)
@@ -268,3 +279,46 @@ def delete_application(request, id):
         application.delete()
         return redirect('/dashboard')
     return render(request, 'delete_confirmation.html', {'application': application})
+
+# @login_required
+# def accept_application(request, application_id):
+#     application = get_object_or_404(Application, id=application_id)
+#     application.status = 'accepted'
+#     application.save()
+#     return redirect('waiting_student_confirmation')  # Adjust as needed
+
+@login_required
+def accept_application(request, application_id):
+    application = get_object_or_404(Application, id=application_id)
+    application.status = 'accepted'
+    application.save()
+
+    # Notify the student that their application has been accepted
+    pupil = application.pupil
+    Notification.objects.create(
+        user=pupil.user,  # Assuming Pupil has a related User instance
+        message=f"Your application to {application.school.name} has been accepted. Please confirm your intent to enroll.",
+        application=application  # Assuming Notification has an application ForeignKey field
+    )
+
+    # Redirect to a confirmation message view for the school
+    return redirect('waiting_student_confirmation')
+
+@login_required
+def confirm_enrollment(request, application_id):
+    application = get_object_or_404(Application, id=application_id)
+    if application.status == 'accepted':  # Only proceed if status is "accepted"
+        application.status = 'awaiting_confirmation'
+        application.save()
+    return redirect('student_dashboard')  # Adjust as needed
+
+def waiting_student_confirmation(request):
+    template = loader.get_template('applications/waiting_student_confirmation.html')
+    return HttpResponse(template.render())
+
+def finalize_enrollment(request, application_id):
+    application = get_object_or_404(Application, id=application_id)
+    if application.status == 'awaiting_confirmation':  # Only proceed if status is "awaiting_confirmation"
+        application.status = 'enrolled'
+        application.save()
+    return redirect('student_dashboard')
