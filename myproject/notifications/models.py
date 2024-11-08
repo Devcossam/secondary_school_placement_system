@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from applications.models import Application
 
 # Create your models here
 
@@ -9,6 +10,7 @@ class Notification(models.Model):
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     is_read = models.BooleanField(default=False)
+    application = models.ForeignKey(Application, null=True, blank=True, on_delete=models.CASCADE)  # Link to Application
 
     class Meta:
         db_table = 'notification'

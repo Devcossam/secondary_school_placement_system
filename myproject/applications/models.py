@@ -6,6 +6,8 @@ class Application(models.Model):
     STATUS = (
         ('Pending', 'Pending'),
         ('Accepted', 'Accepted'),
+        ('Awaiting_Confirmation','Awaiting_Confirmation'),
+        ('Enrolled','Enrolled'),
         ('Rejected', 'Rejected'),
         ('in_review', 'In Review'),
     )
@@ -29,7 +31,7 @@ class Application(models.Model):
 
     # Application details
     date_applied = models.DateTimeField(auto_now_add=True,null=True)
-    status = models.CharField(max_length=10, choices=STATUS, default='Pending')
+    status = models.CharField(max_length=21, choices=STATUS, default='Pending')
 
     # Pupil Information
     name = models.CharField(max_length=100, blank=True,null=True)

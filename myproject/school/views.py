@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 from applications.models import Application
 from django.db.models import Avg
 from django.contrib import messages
+from notifications.models import Notification
 
 
 # Create your views here.
@@ -20,16 +21,6 @@ def school(request):
     template = loader.get_template('school/schools.html')
     context = {
         'schools':schools,
-    }
-    return HttpResponse(template.render(context,request))
-
-def pupil_applications(request):
-    school = request.user.school
-    pending_applications = Application.objects.filter(school=school, status='Pending')
-   
-    template = loader.get_template('school/pupil_applications.html')
-    context = {
-        'pending_applications': pending_applications,
     }
     return HttpResponse(template.render(context,request))
 
@@ -187,3 +178,30 @@ def rate_school(request, school_id):
         'already_rated': already_rated
     }
     return render(request, 'school/rate_school.html', context)
+
+@login_required
+def finalize_enrollment(request, application_id):
+    application = get_object_or_404(Application, id=application_id)
+
+    # Ensure only the school can finalize the enrollment
+    if request.user != application.school.user:
+        return redirect('home')  # Redirect unauthorized users
+
+    # Update application status to 'enrolled'
+    application.status = 'enrolled'
+    application.save()
+
+    # Optionally, notify the student that they have been fully enrolled
+    Notification.objects.create(
+        user=application.pupil.user,
+        message=f"You have been fully enrolled in {application.school.name}.",
+        application = application
+    )
+
+    return redirect('finalize_success')
+
+
+def finalize_success(request):
+    template = loader.get_template('school/finalize_success.html')
+    return HttpResponse(template.render())
+

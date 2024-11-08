@@ -1,0 +1,111 @@
+<!--  
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Applications | Secondary School Placement System</title>
+    <link rel="stylesheet" href='{% static 'css/pupilApplications.css' %}?{% now "U" %}'>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><a>Secondary School Placement System</a></div>
+        <a href="/school_dashboard">Dashboard</a>
+    </div>
+
+    <div class="content">
+        <h1>Pending Applications</h1>
+
+        <table class="applications-table">
+            <thead>
+                <tr>
+                    <th>Pupil Name</th>
+                    <th>Grade</th>
+                    <th>Application Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for application in pending_applications %}
+                    <tr>
+                        <td>{{ application.pupil }}</td>
+                        <td>{{ application.pupil.grade }}</td>
+                        <td>{{ application.date_applied }}</td>
+                        <td>{{ application.status }}</td>
+                        <td><button class="accept-btn">Accept</button> <button class="reject-btn">Reject</button> <button class="view-btn">View</button></td><a href=""></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>Contact Us: <a href="mailto:cossamsoko7@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+        <p>copyright ©2024 Secondary School Placement System</p>
+    </footer>
+</body>
+</html>  -->
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Applications | Secondary School Placement System</title>
+    <link rel="stylesheet" href='{% static 'css/pupilApplications.css' %}?{% now "U" %}'>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><a>Secondary School Placement System</a></div>
+        <a href="/school_dashboard">Dashboard</a>
+    </div>
+
+    <div class="content">
+        <h1>Pending Applications</h1>
+
+        <table class="applications-table">
+            <thead>
+                <tr>
+                    <th>Pupil Name</th>
+                    <th>Grade</th>
+                    <th>Application Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for application in pending_applications %}
+                    <tr>
+                        <td>{{ application.pupil.name }}</td>
+                        <td>{{ application.grade_level }}</td>
+                        <td>{{ application.date_applied|date:"Y-m-d" }}</td>
+                        <td>{{ application.status }}</td>
+                        <td>
+                            <!-- Link Accept button to accept_application view -->
+                            <a href="{% url 'accept_application' application.id %}">
+                                <button class="accept-btn">Accept</button>
+                            </a>
+                            <!-- Link Reject button to reject_application view -->
+                            <a href="">
+                                <button class="reject-btn">Reject</button>
+                            </a>
+                            <!-- Link View button to view_application view -->
+                            <a href="">
+                                <button class="view-btn">View</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>Contact Us: <a href="mailto:cossamsoko7@gmail.com" class="dec">schoolservices3@gmail.com</a></p>
+        <p>copyright ©2024 Secondary School Placement System</p>
+    </footer>
+</body>
+</html>

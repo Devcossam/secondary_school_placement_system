@@ -24,9 +24,10 @@ def create_notifications(sender, instance, created, **kwargs):
     else:
         # Notify the student when the status of the application changes
         Notification.objects.create(
-            user=instance.pupil,
+            user=instance.pupil.user,
             message=f"Your application status is now: {instance.get_status_display()}",
         )
+                    
 
         # Optionally, send an email to the student
         send_mail(
